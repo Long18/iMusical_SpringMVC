@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+          http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+    version="2.1">
+     
+    <persistence-unit name="iMusical">
+    	<class>com.isekai.models.Product</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://27.74.219.184:3306/imusical" />
+            <property name="javax.persistence.jdbc.user" value="remote" />
+            <property name="javax.persistence.jdbc.password" value="remote@123" />
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+    </persistence-unit>
+     
+</persistence>
