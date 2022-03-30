@@ -1,4 +1,4 @@
-package com.isekai.controllers;
+package com.isekai.controllers.client;
 
 import java.util.List;
 
@@ -12,6 +12,7 @@ import com.isekai.service.ProductService;
 
 
 @Controller
+@RequestMapping("/product")
 public class ProductController {
 	@Autowired
 	private ProductService service;
