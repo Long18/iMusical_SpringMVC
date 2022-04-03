@@ -1,85 +1,77 @@
 package com.isekai.models;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
+
 @Entity
 @Table(name = "users_roles")
-public class UserRole {
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Column(name = "user_id")
-		private int id;
+public class UserRole implements Serializable {
 
-		@Column(name = "role_id")
-		private int role_id;
-		
-		@Column(name = "created_at")
-		private Date created_at;
-		
-		@Column(name = "end_at")
-		private Date end_at;
-		
-		@Column(name = "status")
-		private int status;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-		public UserRole() {
-			super();
-		}
+	@EmbeddedId
+	private UserRoleId userRoleId;
 
-		public UserRole(int id, int role_id, Date created_at, Date end_at, int status) {
-			super();
-			this.id = id;
-			this.role_id = role_id;
-			this.created_at = created_at;
-			this.end_at = end_at;
-			this.status = status;
-		}
+	@Column(name = "created_at")
+	private Date created_at;
 
-		public int getId() {
-			return id;
-		}
+	@Column(name = "end_at")
+	private Date end_at;
 
-		public void setId(int id) {
-			this.id = id;
-		}
+	@Column(name = "status")
+	private int status;
 
-		public int getRole_id() {
-			return role_id;
-		}
+	public UserRole() {
+		super();
+	}
 
-		public void setRole_id(int role_id) {
-			this.role_id = role_id;
-		}
+	public UserRole(UserRoleId userRoleId, Date created_at, Date end_at, int status) {
+		super();
+		this.userRoleId = userRoleId;
+		this.created_at = created_at;
+		this.end_at = end_at;
+		this.status = status;
+	}
 
-		public Date getCreated_at() {
-			return created_at;
-		}
+	public UserRoleId getUserRoleId() {
+		return userRoleId;
+	}
 
-		public void setCreated_at(Date created_at) {
-			this.created_at = created_at;
-		}
+	public void setUserRoleId(UserRoleId userRoleId) {
+		this.userRoleId = userRoleId;
+	}
 
-		public Date getEnd_at() {
-			return end_at;
-		}
+	public Date getCreated_at() {
+		return created_at;
+	}
 
-		public void setEnd_at(Date end_at) {
-			this.end_at = end_at;
-		}
+	public void setCreated_at(Date created_at) {
+		this.created_at = created_at;
+	}
 
-		public int getStatus() {
-			return status;
-		}
+	public Date getEnd_at() {
+		return end_at;
+	}
 
-		public void setStatus(int status) {
-			this.status = status;
-		}
-		
-		
+	public void setEnd_at(Date end_at) {
+		this.end_at = end_at;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	
 }

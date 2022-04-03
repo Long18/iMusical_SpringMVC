@@ -1,12 +1,14 @@
 package com.isekai.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +27,9 @@ public class Brand {
 	
 	@Column(name="status")
 	private int status;
+	
+	@OneToMany(mappedBy = "brand")
+	private List<Product> products;
 
 	public Brand() {
 		super();
@@ -68,6 +73,14 @@ public class Brand {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 	
 	

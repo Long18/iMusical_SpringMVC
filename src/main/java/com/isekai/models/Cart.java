@@ -1,53 +1,45 @@
 package com.isekai.models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "cart")
-public class Cart {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="user_id")
-	private int id;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="product_id")
-	private String imageURL;
-	
-	@Column(name="value")
+public class Cart implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+	@EmbeddedId
+	private CartId cartId;
+
+
+	@Column(name = "value")
 	private int value;
 
 	public Cart() {
 		super();
 	}
 
-	public Cart(int id, String imageURL, int value) {
+	public Cart(CartId cartId, int value) {
 		super();
-		this.id = id;
-		this.imageURL = imageURL;
+		this.cartId = cartId;
 		this.value = value;
 	}
 
-	public int getId() {
-		return id;
+	public CartId getCartId() {
+		return cartId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getImageURL() {
-		return imageURL;
-	}
-
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
+	public void setCartId(CartId cartId) {
+		this.cartId = cartId;
 	}
 
 	public int getValue() {
@@ -57,5 +49,6 @@ public class Cart {
 	public void setValue(int value) {
 		this.value = value;
 	}
+
 	
 }

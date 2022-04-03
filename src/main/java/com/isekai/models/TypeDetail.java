@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,11 +17,13 @@ public class TypeDetail {
 	@Column(name = "type_detail_id")
 	private int id;
 
-	@Column(name = "product_id")
-	private int product_id;
+	@ManyToOne
+	@JoinColumn(name = "product_id")
+	private Product product;
 
-	@Column(name = "type_id")
-	private int type_id;
+	@ManyToOne
+	@JoinColumn(name = "type_id")
+	private Type type;
 
 	@Column(name = "type_detail_value")
 	private String type_detail_value;
@@ -28,13 +32,14 @@ public class TypeDetail {
 		super();
 	}
 
-	public TypeDetail(int id, int product_id, int type_id, String type_detail_value) {
+	public TypeDetail(int id, Product product, Type type, String type_detail_value) {
 		super();
 		this.id = id;
-		this.product_id = product_id;
-		this.type_id = type_id;
+		this.product = product;
+		this.type = type;
 		this.type_detail_value = type_detail_value;
 	}
+
 
 	public int getId() {
 		return id;
@@ -44,20 +49,21 @@ public class TypeDetail {
 		this.id = id;
 	}
 
-	public int getProduct_id() {
-		return product_id;
+
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setProduct_id(int product_id) {
-		this.product_id = product_id;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
-	public int getType_id() {
-		return type_id;
+	public Type getType() {
+		return type;
 	}
 
-	public void setType_id(int type_id) {
-		this.type_id = type_id;
+	public void setType(Type type) {
+		this.type = type;
 	}
 
 	public String getType_detail_value() {
@@ -68,6 +74,5 @@ public class TypeDetail {
 		this.type_detail_value = type_detail_value;
 	}
 
-	
 	
 }

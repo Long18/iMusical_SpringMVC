@@ -1,11 +1,14 @@
 package com.isekai.models;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,8 +23,9 @@ public class BrandImage {
 	@Column(name="brand_image_url")
 	private String imageURL;
 	
-	@Column(name="brand_id")
-	private int createdAt;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "brand_id")
+	private Brand Brand;
 	
 	@Column(name="status")
 	private int status;
@@ -30,11 +34,11 @@ public class BrandImage {
 		super();
 	}
 
-	public BrandImage(int id, String imageURL, int createdAt, int status) {
+	public BrandImage(int id, String imageURL, com.isekai.models.Brand brand, int status) {
 		super();
 		this.id = id;
 		this.imageURL = imageURL;
-		this.createdAt = createdAt;
+		Brand = brand;
 		this.status = status;
 	}
 
@@ -54,12 +58,12 @@ public class BrandImage {
 		this.imageURL = imageURL;
 	}
 
-	public int getCreatedAt() {
-		return createdAt;
+	public Brand getBrand() {
+		return Brand;
 	}
 
-	public void setCreatedAt(int createdAt) {
-		this.createdAt = createdAt;
+	public void setBrand(Brand brand) {
+		Brand = brand;
 	}
 
 	public int getStatus() {
@@ -69,6 +73,6 @@ public class BrandImage {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	
+
 	
 }

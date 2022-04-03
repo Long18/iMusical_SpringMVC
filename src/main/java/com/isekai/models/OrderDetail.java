@@ -1,10 +1,14 @@
 package com.isekai.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,11 +19,13 @@ public class OrderDetail {
 	@Column(name="order_detail_id")
 	private int id;
 	
-	@Column(name="order_id")
-	private int order;
+	@ManyToOne
+	@JoinColumn(name="order_id")
+	private Order order;
 	
-	@Column(name="product_id")
-	private int product;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="product_id")
+	private Product product;
 	
 	@Column(name="order_detail_price")
 	private int order_detail_price;
@@ -37,7 +43,7 @@ public class OrderDetail {
 		super();
 	}
 
-	public OrderDetail(int id, int order, int product, int order_detail_price, int order_detail_quantity,
+	public OrderDetail(int id, Order order, Product product, int order_detail_price, int order_detail_quantity,
 			int order_detail_price_sale, int order_detail_total) {
 		super();
 		this.id = id;
@@ -57,19 +63,19 @@ public class OrderDetail {
 		this.id = id;
 	}
 
-	public int getOrder() {
+	public Order getOrder() {
 		return order;
 	}
 
-	public void setOrder(int order) {
+	public void setOrder(Order order) {
 		this.order = order;
 	}
 
-	public int getProduct() {
+	public Product getProduct() {
 		return product;
 	}
 
-	public void setProduct(int product) {
+	public void setProduct(Product product) {
 		this.product = product;
 	}
 
@@ -104,6 +110,6 @@ public class OrderDetail {
 	public void setOrder_detail_total(int order_detail_total) {
 		this.order_detail_total = order_detail_total;
 	}
-	
+
 	
 }

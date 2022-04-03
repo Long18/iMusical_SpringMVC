@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC  
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<!-- Base Define -->
+	<definition name="admin.definition"
+		template="/WEB-INF/views/adminClassic.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/admin/base/_header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/admin/base/_footer.jsp" />
+	</definition>
+	
+	<definition name="admin-login"
+		template="/WEB-INF/views/adminLogin.jsp">
+	</definition>
+
+
+	<definition name="admin.definition"
+		template="/WEB-INF/views/adminClassic.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/WEB-INF/views/admin/base/_header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/admin/base/_footer.jsp" />
+	</definition>
+
+	<definition name="admin-dashboard" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	
+
+<!-- ====================Add================== -->
+	<definition name="add-brand" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="add-order-detail"
+		extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="add-product" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="add-product-type-detail"
+		extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="add-slider" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="add-type" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="add-user-role" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+
+		<!-- ====================All================== -->
+
+
+	</definition>
+	<definition name="all-brands" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="all-orders" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="all-products" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="all-sliders" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="all-types" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="all-users" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<!-- ====================edit================== -->
+
+
+	<definition name="edit-brand" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="edit-order-detail"
+		extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="edit-order" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="edit-product-type-detail"
+		extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="edit-product" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="edit-slider" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="edit-type" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="edit-user-role" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+	<definition name="edit-user" extends="admin.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+	</definition>
+</tiles-definitions>
+   

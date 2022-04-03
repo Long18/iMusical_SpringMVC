@@ -7,7 +7,20 @@
     version="2.1">
      
     <persistence-unit name="iMusical">
+    	<class>com.isekai.models.Brand</class>
+    	<class>com.isekai.models.BrandImage</class>
+    	<class>com.isekai.models.Cart</class>
+    	<class>com.isekai.models.Order</class>
+    	<class>com.isekai.models.OrderDetail</class>
     	<class>com.isekai.models.Product</class>
+    	<class>com.isekai.models.ProductImage</class>
+    	<class>com.isekai.models.Role</class>
+    	<class>com.isekai.models.Slider</class>
+    	<class>com.isekai.models.Type</class>
+    	<class>com.isekai.models.TypeDetail</class>
+    	<class>com.isekai.models.User</class>
+    	<class>com.isekai.models.UserRole</class>
+    	
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://27.74.219.184:3306/imusical" />
             <property name="javax.persistence.jdbc.user" value="remote" />

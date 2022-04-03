@@ -21,6 +21,10 @@ public class ProductImageService {
 		return (List<ProductImage>) repo.findAll();
 	}
 	
+	public List<ProductImage> listAllByProductId(Iterable<Integer> Id){
+		return (List<ProductImage>) repo.findAllById(Id);
+	}
+	
 	public ProductImage get(int id) {
 		Optional<ProductImage> result = repo.findById(id);
 		return result.get();

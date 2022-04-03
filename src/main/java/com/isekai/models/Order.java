@@ -1,12 +1,18 @@
 package com.isekai.models;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -26,8 +32,9 @@ public class Order {
 	@Column(name="order_total_sum")
 	private int total_sum;
 	
-	@Column(name="user_id")
-	private int user;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="user_id")
+	private User user;
 	
 	@Column(name="delivery_name")
 	private String delivery_name;
@@ -56,19 +63,23 @@ public class Order {
 	@Column(name="created_at")
 	private Date created_at;
 	
-	@Column(name="created_by")
-	private Date created_by;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="created_by")
+	private User created_by;
 	
 	@Column(name="status")
 	private int status;
+	
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "order")
+	private List<OrderDetail> orderDetails;
 
 	public Order() {
 		super();
 	}
 
-	public Order(int id, int code, Date export_date, int total_sum, int user, String delivery_name,
+	public Order(int id, int code, Date export_date, int total_sum, User user, String delivery_name,
 			String delivery_address, String delivery_phone, String delivery_email, String delivery_payment_method,
-			String delivery_payment_status, int transport_fee, String transport_type, Date created_at, Date created_by,
+			String delivery_payment_status, int transport_fee, String transport_type, Date created_at, User created_by,
 			int status) {
 		super();
 		this.id = id;
@@ -121,11 +132,11 @@ public class Order {
 		this.total_sum = total_sum;
 	}
 
-	public int getUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(int user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 
@@ -201,11 +212,11 @@ public class Order {
 		this.created_at = created_at;
 	}
 
-	public Date getCreated_by() {
+	public User getCreated_by() {
 		return created_by;
 	}
 
-	public void setCreated_by(Date created_by) {
+	public void setCreated_by(User created_by) {
 		this.created_by = created_by;
 	}
 
@@ -216,5 +227,14 @@ public class Order {
 	public void setStatus(int status) {
 		this.status = status;
 	}
+
+	public List<OrderDetail> getOrderDetails() {
+		return orderDetails;
+	}
+
+	public void setOrderDetails(List<OrderDetail> orderDetails) {
+		this.orderDetails = orderDetails;
+	}
+
 	
 }

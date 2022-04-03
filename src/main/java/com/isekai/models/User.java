@@ -1,12 +1,14 @@
 package com.isekai.models;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,7 +26,7 @@ public class User {
 	private String user_email;
 	
 	@Column(name = "email_verified_at")
-	private Date email_verified_at;
+	private String email_verified_at;
 
 	@Column(name = "password")
 	private String password;
@@ -36,20 +38,26 @@ public class User {
 	private Date created_at;
 	
 	@Column(name = "updated_at")
-	private String updated_at;
+	private Date updated_at;
 	
 	@Column(name = "facebook_id")
 	private String facebook_id;
 
 	@Column(name = "status")
 	private int status;
+	
+	@OneToMany(mappedBy = "cartId.user")
+	private List<Cart> carts;
+	
+	@OneToMany(mappedBy = "userRoleId.user")
+	private List<UserRole> userRoles;
 
 	public User() {
 		super();
 	}
 
-	public User(int id, String user_name, String user_email, Date email_verified_at, String password,
-			String remember_token, Date created_at, String updated_at, String facebook_id, int status) {
+	public User(int id, String user_name, String user_email, String email_verified_at, String password,
+			String remember_token, Date created_at, Date updated_at, String facebook_id, int status) {
 		super();
 		this.id = id;
 		this.user_name = user_name;
@@ -87,11 +95,11 @@ public class User {
 		this.user_email = user_email;
 	}
 
-	public Date getEmail_verified_at() {
+	public String getEmail_verified_at() {
 		return email_verified_at;
 	}
 
-	public void setEmail_verified_at(Date email_verified_at) {
+	public void setEmail_verified_at(String email_verified_at) {
 		this.email_verified_at = email_verified_at;
 	}
 
@@ -119,11 +127,11 @@ public class User {
 		this.created_at = created_at;
 	}
 
-	public String getUpdated_at() {
+	public Date getUpdated_at() {
 		return updated_at;
 	}
 
-	public void setUpdated_at(String updated_at) {
+	public void setUpdated_at(Date updated_at) {
 		this.updated_at = updated_at;
 	}
 
@@ -142,6 +150,14 @@ public class User {
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	
+
+	public List<Cart> getCarts() {
+		return carts;
+	}
+
+	public void setCarts(List<Cart> carts) {
+		this.carts = carts;
+	}
+
 	
 }

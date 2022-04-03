@@ -2,11 +2,14 @@ package com.isekai.models;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -32,8 +35,9 @@ public class Slider {
 	@Column(name = "created_at")
 	private Date created_at;
 	
-	@Column(name = "created_by")
-	private int created_by;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "created_by")
+	private User created_by;
 
 	@Column(name = "status")
 	private int status;
@@ -43,7 +47,7 @@ public class Slider {
 	}
 
 	public Slider(int id, String slider_name, String slider_url, String slider_position, String slider_img_url,
-			Date created_at, int created_by, int status) {
+			Date created_at, User created_by, int status) {
 		super();
 		this.id = id;
 		this.slider_name = slider_name;
@@ -103,11 +107,11 @@ public class Slider {
 		this.created_at = created_at;
 	}
 
-	public int getCreated_by() {
+	public User getCreated_by() {
 		return created_by;
 	}
 
-	public void setCreated_by(int created_by) {
+	public void setCreated_by(User created_by) {
 		this.created_by = created_by;
 	}
 
