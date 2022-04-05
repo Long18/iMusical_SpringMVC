@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "Order")
 public class Order {
@@ -60,6 +62,7 @@ public class Order {
 	@Column(name="transport_type")
 	private String transport_type;
 	
+	@CreationTimestamp
 	@Column(name="created_at")
 	private Date created_at;
 	

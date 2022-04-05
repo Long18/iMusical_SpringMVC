@@ -8,8 +8,10 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
-@Table(name = "users_roles")
+@Table(name = "user_roles")
 public class UserRole implements Serializable {
 
 	/**
@@ -20,6 +22,7 @@ public class UserRole implements Serializable {
 	@EmbeddedId
 	private UserRoleId userRoleId;
 
+	@CreationTimestamp
 	@Column(name = "created_at")
 	private Date created_at;
 

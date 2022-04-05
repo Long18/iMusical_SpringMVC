@@ -23,7 +23,9 @@ public class ProductAdminController {
 	@RequestMapping("/")
 	public ModelAndView home(){
 		ModelAndView mav = new  ModelAndView("admin-dashboard");
+		
 		List<Product> listProduct = service.listAll();
+		
 		mav.addObject("listProduct",listProduct);
 		for (Product product : listProduct) {
 			service.getListImageByProductId(product);

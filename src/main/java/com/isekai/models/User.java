@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -34,9 +36,11 @@ public class User {
 	@Column(name = "remember_token")
 	private String remember_token;
 
+	@CreationTimestamp
 	@Column(name = "created_at")
 	private Date created_at;
 	
+	@CreationTimestamp
 	@Column(name = "updated_at")
 	private Date updated_at;
 	
@@ -157,6 +161,14 @@ public class User {
 
 	public void setCarts(List<Cart> carts) {
 		this.carts = carts;
+	}
+
+	public List<UserRole> getUserRoles() {
+		return userRoles;
+	}
+
+	public void setUserRoles(List<UserRole> userRoles) {
+		this.userRoles = userRoles;
 	}
 
 	

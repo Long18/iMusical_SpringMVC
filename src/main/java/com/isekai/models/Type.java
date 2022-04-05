@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "types")
 public class Type {
@@ -41,6 +43,7 @@ public class Type {
 	@Column(name = "type_meta_desc")
 	private String type_meta_desc;
 
+	@CreationTimestamp
 	@Column(name = "create_at")
 	private Date create_at;
 	

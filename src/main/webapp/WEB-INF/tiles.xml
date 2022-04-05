@@ -36,104 +36,104 @@
 	
 
 <!-- ====================Add================== -->
-	<definition name="add-brand" extends="admin.definition">
+	<definition name="admin-add-brand" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_add_brand.jsp" />
 	</definition>
-	<definition name="add-order-detail"
+	<definition name="admin-add-order-detail"
 		extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_add_order_detail.jsp" />
 	</definition>
-	<definition name="add-product" extends="admin.definition">
+	<definition name="admin-add-product" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_add_product_type_detail.jsp" />
 	</definition>
-	<definition name="add-product-type-detail"
+	<definition name="admin-add-product-type-detail"
 		extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_add_product.jsp" />
 	</definition>
-	<definition name="add-slider" extends="admin.definition">
+	<definition name="admin-add-slider" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_add_slider.jsp" />
 	</definition>
-	<definition name="add-type" extends="admin.definition">
+	<definition name="admin-add-type" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_add_type.jsp" />
 	</definition>
-	<definition name="add-user-role" extends="admin.definition">
+	<definition name="admin-add-user-role" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_add_user_role.jsp" />
 
 		<!-- ====================All================== -->
 
 
 	</definition>
-	<definition name="all-brands" extends="admin.definition">
+	<definition name="admin-all-brands" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_all_brands.jsp" />
 	</definition>
-	<definition name="all-orders" extends="admin.definition">
+	<definition name="admin-all-orders" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_all_orders.jsp" />
 	</definition>
-	<definition name="all-products" extends="admin.definition">
+	<definition name="admin-all-products" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_all_products.jsp" />
 	</definition>
-	<definition name="all-sliders" extends="admin.definition">
+	<definition name="admin-all-sliders" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_all_sliders.jsp" />
 	</definition>
-	<definition name="all-types" extends="admin.definition">
+	<definition name="admin-all-types" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_all_types.jsp" />
 	</definition>
-	<definition name="all-users" extends="admin.definition">
+	<definition name="admin-all-users" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_all_users.jsp" />
 	</definition>
 	<!-- ====================edit================== -->
 
 
-	<definition name="edit-brand" extends="admin.definition">
+	<definition name="admin-edit-brand" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_edit_brand.jsp" />
 	</definition>
-	<definition name="edit-order-detail"
+	<definition name="admin-edit-order-detail"
 		extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_edit_order_detail.jsp" />
 	</definition>
-	<definition name="edit-order" extends="admin.definition">
+	<definition name="admin-edit-order" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_edit_order.jsp" />
 	</definition>
-	<definition name="edit-product-type-detail"
+	<definition name="admin-edit-product-type-detail"
 		extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_edit_product_type_detail.jsp" />
 	</definition>
-	<definition name="edit-product" extends="admin.definition">
+	<definition name="admin-edit-product" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_edit_product.jsp" />
 	</definition>
-	<definition name="edit-slider" extends="admin.definition">
+	<definition name="admin-edit-slider" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_edit_slider.jsp" />
 	</definition>
-	<definition name="edit-type" extends="admin.definition">
+	<definition name="admin-edit-type" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_edit_type.jsp" />
 	</definition>
-	<definition name="edit-user-role" extends="admin.definition">
+	<definition name="admin-edit-user-role" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_edit_user_role.jsp" />
 	</definition>
-	<definition name="edit-user" extends="admin.definition">
+	<definition name="admin-edit-user" extends="admin.definition">
 		<put-attribute name="body"
-			value="/WEB-INF/views/admin/body/_dashboard.jsp" />
+			value="/WEB-INF/views/admin/body/_edit_user.jsp" />
 	</definition>
 </tiles-definitions>
    

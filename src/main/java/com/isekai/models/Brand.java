@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "brands")
 public class Brand {
@@ -22,6 +24,7 @@ public class Brand {
 	@Column(name="brand_name")
 	private String name;
 	
+	@CreationTimestamp
 	@Column(name="create_at")
 	private Date createdAt;
 	
@@ -82,6 +85,5 @@ public class Brand {
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
-	
-	
+
 }

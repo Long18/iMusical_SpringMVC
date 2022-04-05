@@ -9,8 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "sliders")
@@ -32,11 +35,12 @@ public class Slider {
 	@Column(name = "slider_img_url")
 	private String slider_img_url;
 	
+	@CreationTimestamp
 	@Column(name = "created_at")
 	private Date created_at;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "created_by")
+	@ManyToOne
+	@JoinColumn(name = "created_by", insertable = true)
 	private User created_by;
 
 	@Column(name = "status")

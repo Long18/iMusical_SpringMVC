@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
 @Table(name = "products")
 public class Product {
@@ -42,6 +44,7 @@ public class Product {
 	@Column(name = "product_note")
 	private String note;
 
+	@CreationTimestamp
 	@Column(name = "created_at")
 	private Date created_at;
 

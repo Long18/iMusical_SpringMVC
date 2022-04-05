@@ -6,42 +6,28 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Update Product Detail</h4>
+                        <h4 class="card-title">Update brand</h4>
                     </div>
                     <div class="card-body">
-                        <?php
-
-                        use Illuminate\Support\Facades\Session;
-
-                        $message = Session::get('message');
-                        if ($message) {
-                            echo '<span class="text-alert">' . $message . '</span>';
-                            Session::put('message', null);
-                            // If message not empty -> make empty
-                        }
-
-                        $type = $edit_type_detail->getType();
-                        ?>
                         <div class="form-validation">
-                            <form class="form-valide" action="{{ URL::to('/admin/update-product-type-detail/'.$product_id.'/'.$edit_type_detail->type_detail_id) }}" method="post">
-                                {{ csrf_field() }}
-                                <div class="row">
+                            <form class="form-valide" action="<c:url value='/admin/brand/update-brand?id=${edit_brand.id}'/>" method="post">                              <div class="row">
                                     <div class="col-xl-6">
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_name_type"><b>Type</b>
+                                            <label class="col-lg-4 col-form-label" for="val_name_brand"><b>Name</b>
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_name_type" name="val_name_type" placeholder="Enter a name brand.." value="{{$type->type_name}}" disabled>
+                                                <input type="text" class="form-control" id="val_name_brand" name="val_name_brand" placeholder="Enter a name brand.." value="${edit_brand.name}">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-xl-6">
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="val_type_value"><b>Value</b>
+                                            <label class="col-lg-4 col-form-label" for="val_status_brand"><b>Status</b>
                                             </label>
                                             <div class="col-lg-6">
-                                            <input type="text" class="form-control" id="val_type_value" name="val_type_value" placeholder="Enter a name brand.." value="{{$edit_type_detail->type_detail_value}}">
+                                                <input type="checkbox" class="css-control-input mr-2" id="val_status_brand" name="val_status_brand" value="1" <c:if test="${edit_brand.status == 1}">checked</c:if> >
+                                                <span class="css-control-indicator"></span> Avaiable</label>
                                             </div>
                                         </div>
                                         <!-- <div class="form-group row">

@@ -41,17 +41,8 @@
 
 		<tiles:insertAttribute name="body" />
 
-		<%-- <tiles:insertAttribute name="footer" /> --%>
+		<tiles:insertAttribute name="footer" />
 
-		<div class="footer">
-			<div class="copyright">
-				<p>
-					Copyright © Designed &amp; Developed by <a
-						href="https://www.facebook.com/William.2418/" target="_blank">Isekai
-						Team</a> 2022
-				</p>
-			</div>
-		</div>
 	</div>
 	
 	<script src="<c:url value='/resources/template/BE/vendor/global/global.min.js'/>" type="text/javascript"></script>

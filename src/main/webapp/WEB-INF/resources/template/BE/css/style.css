@@ -12675,7 +12675,7 @@ svg.pulse-svg .third-circle {
 
 .header-left .search_bar .search_icon i {
     font-size: 24px;
-    color: #b1b1b1;
+    color: rgb(0, 0, 0);
     line-height: 1
 }
 
@@ -32972,7 +32972,7 @@ svg text {
     border-radius: 0;
     background: #fff;
     border: 1px solid #f0f1f5;
-    color: #b1b1b1;
+    color: #000000;
     height: 56px
 }
 

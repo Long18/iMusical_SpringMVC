@@ -1,7 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div class="nav-header">
-	<a href="<c:url value='/admin/dashboard'/>" class="brand-logo">
+	<a href="<c:url value='/admin/'/>" class="brand-logo">
 	<img class="logo-abbr" src="<c:url value='/resources/template/BE/images/logo.png'/>" alt="">
 	<img class="logo-compact" src="<c:url value='/resources/template/BE/images/logo-text.png'/>" alt="">
 	<img class="brand-title" src="<c:url value='/resources/template/BE/images/logo-text.png'/>" alt="">
@@ -376,7 +376,7 @@
 						class="nav-link" href="javascript:void(0)" role="button"
 						data-toggle="dropdown"> <img src="<c:url value='/resources/template/BE/images/profile/17.jpg'/>" width="20" alt="" />
 							<div class="header-info">
-								<p class="fs-12 mb-0">admin</p>
+								<p class="fs-12 mb-0">${UserLogin.user_name}</p>
 							</div>
 					</a>
 						<div class="dropdown-menu dropdown-menu-right">
@@ -441,16 +441,16 @@
 					class="nav-text">Order Manager</span>
 			</a>
 				<ul aria-expanded="false">
-					<li><a href="<c:url value="/admin/all-orders"/>">All Order</a></li>
+					<li><a href="<c:url value="/admin/order/"/>">All Order</a></li>
 				</ul></li>
 			<li><a class="has-arrow ai-icon" href="javascript:void()"
 				aria-expanded="false"> <i class="flaticon-381-network"></i> <span
 					class="nav-text">Products</span>
 			</a>
 				<ul aria-expanded="false">
-					<li><a href="<c:url value="/admin/all-products"/>">All
+					<li><a href="<c:url value="/admin/product/"/>">All
 							Products</a></li>
-					<li><a href="<c:url value="/admin/add-product"/>">Add
+					<li><a href="<c:url value="/admin/product/add-product"/>">Add
 							Product</a></li>
 				</ul></li>
 			<li><a class="has-arrow ai-icon" href="javascript:void()"
@@ -458,33 +458,33 @@
 					class="nav-text">Types</span>
 			</a>
 				<ul aria-expanded="false">
-					<li><a href="<c:url value="/admin/all-types"/>">All Types</a></li>
-					<li><a href="<c:url value="/admin/add-type"/>">Add Type</a></li>
+					<li><a href="<c:url value="/admin/type/"/>">All Types</a></li>
+					<li><a href="<c:url value="/admin/type/add-type"/>">Add Type</a></li>
 				</ul></li>
 			<li><a class="has-arrow ai-icon" href="javascript:void()"
 				aria-expanded="false"> <i class="flaticon-381-price-tag"></i> <span
 					class="nav-text">Brands</span>
 			</a>
 				<ul aria-expanded="false">
-					<li><a href="<c:url value="/admin/all-brands"/>">All
+					<li><a href="<c:url value="/admin/brand/"/>">All
 							Brands</a></li>
-					<li><a href="<c:url value="/admin/add-brand"/>">Add Brand</a></li>
+					<li><a href="<c:url value="/admin/brand/add-brand"/>">Add Brand</a></li>
 				</ul></li>
 			<li><a class="has-arrow ai-icon" href="javascript:void()"
 				aria-expanded="false"> <i class="flaticon-381-user-4"></i> <span
 					class="nav-text">Users Manager</span>
 			</a>
 				<ul aria-expanded="false">
-					<li><a href="<c:url value='/admin/all-users'/>">All User</a></li>
+					<li><a href="<c:url value='/admin/user/'/>">All User</a></li>
 				</ul></li>
 			<li><a class="has-arrow ai-icon" href="javascript:void()"
 				aria-expanded="false"> <i class="flaticon-381-menu"></i> <span
 					class="nav-text">Sliders</span>
 			</a>
 				<ul aria-expanded="false">
-					<li><a href="<c:url value='/admin/all-sliders'/>">All
+					<li><a href="<c:url value='/admin/slider/'/>">All
 							Slider</a></li>
-					<li><a href="<c:url value='/admin/add-slider'/>">Add
+					<li><a href="<c:url value='/admin/slider/add-slider'/>">Add
 							Slider</a></li>
 				</ul></li>
 		</ul>
