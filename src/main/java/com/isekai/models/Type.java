@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -33,7 +34,7 @@ public class Type {
 	@Column(name = "type_image_url")
 	private String type_image_url;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "parent_id")
 	private Type parent;
 
@@ -47,7 +48,7 @@ public class Type {
 	@Column(name = "create_at")
 	private Date create_at;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "create_by")
 	private User create_by;
 	
