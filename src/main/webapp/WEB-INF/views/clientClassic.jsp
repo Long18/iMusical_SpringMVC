@@ -1,69 +1,90 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
-<title><tiles:getAsString name="title" /></title>
+<!-- Basic Page Needs -->
+<meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<title>iMusic | Buy Mucsical Instruments Online</title>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="csrf-token" content="rFtJ8NudN4YmTWbPJ4KufcTFd14V2dNIEXZdWTqS">
-    <meta name="description" content="Some description for the page" />
 
-    <link rel="icon" type="image/png" sizes="16x16" href="<c:url value='/resources/template/BE/images/favicon.png'/>">
-    <link href="<c:url value='/resources/template/BE/vendor/bootstrap-select/dist/css/bootstrap-select.min.css'/>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value='/resources/template/BE/vendor/jqvmap/css/jqvmap.min.css'/>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value='/resources/template/BE/vendor/chartist/css/chartist.min.css'/>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value='/resources/template/BE/vendor/owl-carousel/owl.carousel.css'/>" rel="stylesheet" type="text/css" />
+<!-- Mobile Specific Metas -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <link href="<c:url value='/resources/template/BE/vendor/bootstrap-select/dist/css/bootstrap-select.min.css'/>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value='/resources/template/BE/vendor/datatables/css/jquery.dataTables.min.css'/>" rel="stylesheet" type="text/css" />
-    <link href="<c:url value='/resources/template/BE/css/style.css'/>" rel="stylesheet" type="text/css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	
+<!-- Theme Style -->
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/resources/template/FE/css/style.css'/>">
+
+<!-- Favicon and Touch Icons  -->
+<link rel="shortcut icon"
+	href="<c:url value='/resources/template/FE/icon/Favicon.png'/>">
+<link rel="apple-touch-icon-precomposed"
+	href="<c:url value='/resources/template/FE/icon/Favicon.png'/>">
+
+<!-- Reponsive -->
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/resources/template/FE/css/responsive.css'/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/resources/template/FE/css/textanimation.css'/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value='/resources/template/FE/css/sweetalert.css'/>">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
 </head>
+<body class="body header-fixed is_dark">
 
-<body>
-	<div id="preloader">
-		<div class="sk-three-bounce">
-			<div class="sk-child sk-bounce1"></div>
-			<div class="sk-child sk-bounce2"></div>
-			<div class="sk-child sk-bounce3"></div>
-		</div>
+	<!-- preloade -->
+	<div class="preload preload-container">
+		<div class="preload-logo"></div>
 	</div>
+	<!-- /preload -->
 
+	<div id="wrapper">
+		<div id="page" class="clearfix">
+			
 
-	<div id="main-wrapper">
+			<tiles:insertAttribute name="header" />
 
-		<tiles:insertAttribute name="header" />
+			<tiles:insertAttribute name="body" />
 
-		<tiles:insertAttribute name="body" />
+			<tiles:insertAttribute name="footer" />
 
-		<%-- <tiles:insertAttribute name="footer" /> --%>
-
-		<div class="footer">
-			<div class="copyright">
-				<p>
-					Copyright © Designed &amp; Developed by <a
-						href="https://www.facebook.com/William.2418/" target="_blank">Isekai
-						Team</a> 2022
-				</p>
-			</div>
+			
 		</div>
-	</div>
-	
-	<script src="<c:url value='/resources/template/BE/vendor/global/global.min.js'/>" type="text/javascript"></script>
-    <script src="<c:url value='/resources/template/BE/vendor/bootstrap-select/dist/js/bootstrap-select.min.js'/>" type="text/javascript"></script>
-    <script src="<c:url value='/resources/template/BE/vendor/chart.js/Chart.bundle.min.js'/>" type="text/javascript"></script>
-    <script src="<c:url value='/resources/template/BE/vendor/peity/jquery.peity.min.js'/>" type="text/javascript"></script>
-    <script src="<c:url value='/resources/template/BE/vendor/apexchart/apexchart.js'/>" type="text/javascript"></script>
-    <script src="<c:url value='/resources/template/BE/js/dashboard/dashboard-1.js'/>" type="text/javascript"></script>
-    <script src="<c:url value='/resources/template/BE/js/custom.js'/>" type="text/javascript"></script>
-    <script src="<c:url value='/resources/template/BE/js/dlabnav-init.js'/>" type="text/javascript"></script>
+		<!-- /#page -->
 
-    <script src="<c:url value='/resources/template/BE/vendor/datatables/js/jquery.dataTables.min.js'/>" type="text/javascript"></script>
-    <script src="<c:url value='/resources/template/BE/js/plugins-init/datatables.init.js'/>" type="text/javascript"></script>
-<!--     <script data-cfasync="false" src={{ asset('../../public/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js'/>"></script> -->
+	</div>
+	<!-- /#wrapper -->
 	
+	<a id="scroll-top"></a>
+
+    <!-- Javascript -->
+    <script src="<c:url value='/resources/template/FE/js/jquery.min.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/main.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/jquery.easing.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/popper.min.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/bootstrap.min.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/wow.min.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/plugin.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/count-down.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/shortcodes.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/swiper-bundle.min.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/swiper.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/web3.min.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/moralis.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/nft.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/sweetalert2.all.js'/>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0&appId=435206154792265&autoLogAppEvents=1"
+        nonce="UVTONwsm"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+	
+
 </body>
 </html>

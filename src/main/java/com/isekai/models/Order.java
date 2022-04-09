@@ -18,21 +18,21 @@ import javax.persistence.Table;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
-@Table(name = "Order")
+@Table(name = "orders")
 public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="order_id")
-	private int id;
+	private Integer id;
 	
 	@Column(name="order_code")
-	private int code;
+	private Integer code;
 	
 	@Column(name="order_export_date")
 	private Date export_date;
 	
 	@Column(name="order_total_sum")
-	private int total_sum;
+	private Integer total_sum;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="user_id")
@@ -57,7 +57,7 @@ public class Order {
 	private String delivery_payment_status;
 	
 	@Column(name="transport_fee")
-	private int transport_fee;
+	private Integer transport_fee;
 	
 	@Column(name="transport_type")
 	private String transport_type;
@@ -71,7 +71,7 @@ public class Order {
 	private User created_by;
 	
 	@Column(name="status")
-	private int status;
+	private Integer status;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "order")
 	private List<OrderDetail> orderDetails;
@@ -80,10 +80,10 @@ public class Order {
 		super();
 	}
 
-	public Order(int id, int code, Date export_date, int total_sum, User user, String delivery_name,
+	public Order(Integer id, Integer code, Date export_date, Integer total_sum, User user, String delivery_name,
 			String delivery_address, String delivery_phone, String delivery_email, String delivery_payment_method,
-			String delivery_payment_status, int transport_fee, String transport_type, Date created_at, User created_by,
-			int status) {
+			String delivery_payment_status, Integer transport_fee, String transport_type, Date created_at, User created_by,
+			Integer status) {
 		super();
 		this.id = id;
 		this.code = code;
@@ -103,19 +103,19 @@ public class Order {
 		this.status = status;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public int getCode() {
+	public Integer getCode() {
 		return code;
 	}
 
-	public void setCode(int code) {
+	public void setCode(Integer code) {
 		this.code = code;
 	}
 
@@ -127,11 +127,11 @@ public class Order {
 		this.export_date = export_date;
 	}
 
-	public int getTotal_sum() {
+	public Integer getTotal_sum() {
 		return total_sum;
 	}
 
-	public void setTotal_sum(int total_sum) {
+	public void setTotal_sum(Integer total_sum) {
 		this.total_sum = total_sum;
 	}
 
@@ -191,11 +191,11 @@ public class Order {
 		this.delivery_payment_status = delivery_payment_status;
 	}
 
-	public int getTransport_fee() {
+	public Integer getTransport_fee() {
 		return transport_fee;
 	}
 
-	public void setTransport_fee(int transport_fee) {
+	public void setTransport_fee(Integer transport_fee) {
 		this.transport_fee = transport_fee;
 	}
 
@@ -223,11 +223,11 @@ public class Order {
 		this.created_by = created_by;
 	}
 
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 
@@ -238,6 +238,5 @@ public class Order {
 	public void setOrderDetails(List<OrderDetail> orderDetails) {
 		this.orderDetails = orderDetails;
 	}
-
 	
 }

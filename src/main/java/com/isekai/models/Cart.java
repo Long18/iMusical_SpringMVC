@@ -22,13 +22,13 @@ public class Cart implements Serializable{
 
 
 	@Column(name = "value")
-	private int value;
+	private Integer value;
 
 	public Cart() {
 		super();
 	}
 
-	public Cart(CartId cartId, int value) {
+	public Cart(CartId cartId, Integer value) {
 		super();
 		this.cartId = cartId;
 		this.value = value;
@@ -42,11 +42,11 @@ public class Cart implements Serializable{
 		this.cartId = cartId;
 	}
 
-	public int getValue() {
+	public Integer getValue() {
 		return value;
 	}
 
-	public void setValue(int value) {
+	public void setValue(Integer value) {
 		this.value = value;
 	}
 

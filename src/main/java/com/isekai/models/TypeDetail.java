@@ -1,5 +1,7 @@
 package com.isekai.models;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,11 +13,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "types_detail")
-public class TypeDetail {
+public class TypeDetail implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "type_detail_id")
-	private int id;
+	private Integer id;
 
 	@ManyToOne
 	@JoinColumn(name = "product_id")
@@ -32,7 +39,7 @@ public class TypeDetail {
 		super();
 	}
 
-	public TypeDetail(int id, Product product, Type type, String type_detail_value) {
+	public TypeDetail(Integer id, Product product, Type type, String type_detail_value) {
 		super();
 		this.id = id;
 		this.product = product;
@@ -40,15 +47,13 @@ public class TypeDetail {
 		this.type_detail_value = type_detail_value;
 	}
 
-
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
-
 
 	public Product getProduct() {
 		return product;
@@ -73,6 +78,5 @@ public class TypeDetail {
 	public void setType_detail_value(String type_detail_value) {
 		this.type_detail_value = type_detail_value;
 	}
-
 	
 }

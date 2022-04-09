@@ -12,12 +12,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "order_detail")
+@Table(name = "order_details")
 public class OrderDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="order_detail_id")
-	private int id;
+	private Integer id;
 	
 	@ManyToOne
 	@JoinColumn(name="order_id")
@@ -28,23 +28,23 @@ public class OrderDetail {
 	private Product product;
 	
 	@Column(name="order_detail_price")
-	private int order_detail_price;
+	private Integer order_detail_price;
 	
 	@Column(name="order_detail_quantity")
-	private int order_detail_quantity;
+	private Integer order_detail_quantity;
 	
 	@Column(name="order_detail_price_sale")
-	private int order_detail_price_sale;
+	private Integer order_detail_price_sale;
 	
 	@Column(name="order_detail_total")
-	private int order_detail_total;
+	private Integer order_detail_total;
 
 	public OrderDetail() {
 		super();
 	}
 
-	public OrderDetail(int id, Order order, Product product, int order_detail_price, int order_detail_quantity,
-			int order_detail_price_sale, int order_detail_total) {
+	public OrderDetail(Integer id, Order order, Product product, Integer order_detail_price, Integer order_detail_quantity,
+			Integer order_detail_price_sale, Integer order_detail_total) {
 		super();
 		this.id = id;
 		this.order = order;
@@ -55,11 +55,11 @@ public class OrderDetail {
 		this.order_detail_total = order_detail_total;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -79,37 +79,43 @@ public class OrderDetail {
 		this.product = product;
 	}
 
-	public int getOrder_detail_price() {
+	public Integer getOrder_detail_price() {
 		return order_detail_price;
 	}
 
-	public void setOrder_detail_price(int order_detail_price) {
+	public void setOrder_detail_price(Integer order_detail_price) {
 		this.order_detail_price = order_detail_price;
 	}
 
-	public int getOrder_detail_quantity() {
+	public Integer getOrder_detail_quantity() {
 		return order_detail_quantity;
 	}
 
-	public void setOrder_detail_quantity(int order_detail_quantity) {
+	public void setOrder_detail_quantity(Integer order_detail_quantity) {
 		this.order_detail_quantity = order_detail_quantity;
 	}
 
-	public int getOrder_detail_price_sale() {
+	public Integer getOrder_detail_price_sale() {
 		return order_detail_price_sale;
 	}
 
-	public void setOrder_detail_price_sale(int order_detail_price_sale) {
+	public void setOrder_detail_price_sale(Integer order_detail_price_sale) {
 		this.order_detail_price_sale = order_detail_price_sale;
 	}
 
-	public int getOrder_detail_total() {
+	public Integer getOrder_detail_total() {
 		return order_detail_total;
 	}
 
-	public void setOrder_detail_total(int order_detail_total) {
+	public void setOrder_detail_total(Integer order_detail_total) {
 		this.order_detail_total = order_detail_total;
 	}
 
-	
+	public String getTotalSum() {
+		if(this.order_detail_price_sale == null) {
+			return order_detail_price*order_detail_quantity + "";
+		}else {
+			return order_detail_price_sale*order_detail_quantity + "";
+		}
+	}
 }

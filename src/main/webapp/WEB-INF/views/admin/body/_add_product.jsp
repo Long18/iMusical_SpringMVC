@@ -9,20 +9,8 @@
                         <h4 class="card-title">Add Product</h4>
                     </div>
                     <div class="card-body">
-                        <?php
-
-                        use Illuminate\Support\Facades\Session;
-
-                        $message = Session::get('message');
-                        if ($message) {
-                            echo '<span class="text-alert">' . $message . '</span>';
-                            Session::put('message', null);
-                            // If message not empty -> make empty
-                        }
-                        ?>
                         <div class="form-validation">
-                            <form class="form-valide" action="{{URL::to('/admin/save-product')}}" method="post">
-                                {{ csrf_field() }}
+                            <form class="form-valide" action="<c:url value='save-product'/>" method="post">
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="form-group row">
@@ -38,21 +26,19 @@
                                                 </label>
                                                 <div class="col-lg-6">
                                                     <select class="form-control default-select" id="val_brand_product" name="val_brand_product">
-                                                        <?php
-                                                        foreach ($brands as $brand) {
-                                                            echo '<option value="' . $brand->brand_id . '">' . $brand->brand_name . '</option>';
-                                                        }
-                                                        ?>
+                                                       	<c:forEach items="${brands }" var="brand">
+                                                       		<option value="${brand.id }">${brand.name }</option>
+                                                       	</c:forEach>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
+<!--                                             <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val_slug_product">Slug <span class="text-danger">*</span>
                                                 </label>
                                                 <div class="col-lg-6">
                                                     <input type="text" class="form-control" id="val_slug_product" name="val_slug_product" placeholder="Your valid Slug..">
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="form-group row">
                                                 <label class="col-lg-4 col-form-label" for="val_price_product">Price
                                                     <span class="text-danger">*</span>
@@ -93,11 +79,9 @@
                                                 </label>
                                                 <div class="col-lg-6">
                                                     <select class="form-control default-select" id="val_category_product" name="val_category_product">
-                                                        <?php
-                                                        foreach ($categories as $category) {
-                                                            echo '<option value="' . $category->type_id . '">' . $category->type_name . '</option>';
-                                                        }
-                                                        ?>
+                                                        <c:forEach items="${categories }" var="category">
+                                                       		<option value="${category.id }">${category.type_name }</option>
+                                                       	</c:forEach>
                                                     </select>
                                                 </div>
                                             </div>

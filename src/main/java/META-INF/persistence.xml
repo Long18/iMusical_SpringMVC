@@ -22,7 +22,7 @@
     	<class>com.isekai.models.UserRole</class>
     	
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://27.74.219.184:3306/imusical" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/imusical" />
             <property name="javax.persistence.jdbc.user" value="remote" />
             <property name="javax.persistence.jdbc.password" value="remote@123" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

@@ -1,5 +1,6 @@
 package com.isekai.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.isekai.models.OrderDetail;
 import com.isekai.models.Product;
 import com.isekai.models.ProductImage;
 import com.isekai.models.TypeDetail;
@@ -71,4 +73,17 @@ public class ProductService {
 			return product.getTypeDetails();
 		}
 	}
+	
+	public List<Product> getListTopSeller() {
+		
+		List<Object[]> listTopSeller = entityManager
+				.createQuery("SELECT detail.product.id AS id, SUM(detail.order_detail_quantity) AS product_count FROM OrderDetail AS detail GROUP BY detail.product.id ORDER BY product_count desc")
+				.getResultList();
+		List<Product> listProducts = new ArrayList<Product>();
+		for (Object[] item : listTopSeller) {
+			listProducts.add(get((int) item[0]));
+		}
+		entityManager.close();
+		return listProducts;
+}
 }

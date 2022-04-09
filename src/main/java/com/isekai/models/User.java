@@ -19,7 +19,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
-	private int id;
+	private Integer id;
 
 	@Column(name = "user_name")
 	private String user_name;
@@ -48,7 +48,7 @@ public class User {
 	private String facebook_id;
 
 	@Column(name = "status")
-	private int status;
+	private Integer status;
 	
 	@OneToMany(mappedBy = "cartId.user")
 	private List<Cart> carts;
@@ -60,8 +60,8 @@ public class User {
 		super();
 	}
 
-	public User(int id, String user_name, String user_email, String email_verified_at, String password,
-			String remember_token, Date created_at, Date updated_at, String facebook_id, int status) {
+	public User(Integer id, String user_name, String user_email, String email_verified_at, String password,
+			String remember_token, Date created_at, Date updated_at, String facebook_id, Integer status) {
 		super();
 		this.id = id;
 		this.user_name = user_name;
@@ -75,11 +75,11 @@ public class User {
 		this.status = status;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -147,11 +147,11 @@ public class User {
 		this.facebook_id = facebook_id;
 	}
 
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 

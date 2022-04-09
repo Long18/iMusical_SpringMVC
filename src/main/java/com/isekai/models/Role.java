@@ -13,30 +13,30 @@ public class Role {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="role_id")
-	private int id;
+	private Integer id;
 	
 	@Column(name="role_name")
 	private String role_name;
 	
 	@Column(name="status")
-	private int status;
+	private Integer status;
 
 	public Role() {
 		super();
 	}
 
-	public Role(int id, String role_name, int status) {
+	public Role(Integer id, String role_name, Integer status) {
 		super();
 		this.id = id;
 		this.role_name = role_name;
 		this.status = status;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -48,11 +48,11 @@ public class Role {
 		this.role_name = role_name;
 	}
 
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 

@@ -46,7 +46,7 @@ public class OrderService {
 		if (order.getOrderDetails() instanceof PersistentBag || order.getOrderDetails() == null) {
 
 			List<OrderDetail> listOrderDetails = entityManager
-					.createQuery("SELECT detail FROM OrderDetail detail WHERE order_id = :order_id", OrderDetail.class)
+					.createQuery("FROM OrderDetail WHERE order.id = :order_id", OrderDetail.class)
 					.setParameter("order_id", order.getId()).getResultList();
 			entityManager.close();
 			order.setOrderDetails(listOrderDetails);

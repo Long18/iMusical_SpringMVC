@@ -30,13 +30,13 @@ public class UserRole implements Serializable {
 	private Date end_at;
 
 	@Column(name = "status")
-	private int status;
+	private Integer status;
 
 	public UserRole() {
 		super();
 	}
 
-	public UserRole(UserRoleId userRoleId, Date created_at, Date end_at, int status) {
+	public UserRole(UserRoleId userRoleId, Date created_at, Date end_at, Integer status) {
 		super();
 		this.userRoleId = userRoleId;
 		this.created_at = created_at;
@@ -68,11 +68,11 @@ public class UserRole implements Serializable {
 		this.end_at = end_at;
 	}
 
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 

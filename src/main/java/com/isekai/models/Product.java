@@ -33,10 +33,10 @@ public class Product {
 	private String detail;
 
 	@Column(name = "product_price")
-	private String price;
+	private Integer price = -1;
 
 	@Column(name = "product_sale_price")
-	private String priceSale;
+	private Integer priceSale = -1;
 
 	@Column(name = "product_end_sale")
 	private Date endSale;
@@ -48,7 +48,7 @@ public class Product {
 	@Column(name = "created_at")
 	private Date created_at;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "created_by", referencedColumnName = "user_id")
 	private User created_by;
 
@@ -56,15 +56,15 @@ public class Product {
 	@JoinColumn(name = "brand_id", referencedColumnName = "brand_id")
 	private Brand brand;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "category_id", referencedColumnName = "type_id")
 	private Type category;
 
 	@Column(name = "product_amount")
-	private int amount;
+	private Integer amount;
 
 	@Column(name = "status")
-	private int status;
+	private Integer status;
 	
 	@OneToMany( mappedBy = "product")
 	private List<TypeDetail> typeDetails;
@@ -77,8 +77,9 @@ public class Product {
 		super();
 	}
 
-	public Product(int id, String name, String detail, String price, String priceSale, Date endSale, String note,
-			Date created_at, User created_by, Brand brand, Type category, int amount, int status) {
+	public Product(Integer id, String name, String detail, Integer price, Integer priceSale, Date endSale, String note,
+			Date created_at, User created_by, Brand brand, Type category, Integer amount, Integer status,
+			List<TypeDetail> typeDetails, List<ProductImage> productImages) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -93,13 +94,15 @@ public class Product {
 		this.category = category;
 		this.amount = amount;
 		this.status = status;
+		this.typeDetails = typeDetails;
+		this.productImages = productImages;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -119,19 +122,19 @@ public class Product {
 		this.detail = detail;
 	}
 
-	public String getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 
-	public String getPriceSale() {
+	public Integer getPriceSale() {
 		return priceSale;
 	}
 
-	public void setPriceSale(String priceSale) {
+	public void setPriceSale(Integer priceSale) {
 		this.priceSale = priceSale;
 	}
 
@@ -183,19 +186,19 @@ public class Product {
 		this.category = category;
 	}
 
-	public int getAmount() {
+	public Integer getAmount() {
 		return amount;
 	}
 
-	public void setAmount(int amount) {
+	public void setAmount(Integer amount) {
 		this.amount = amount;
 	}
 
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 

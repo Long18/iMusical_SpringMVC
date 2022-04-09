@@ -53,4 +53,27 @@ public class TypeService {
 			return type.getTypeDetails();
 		}
 	}
+	
+	public List<Type> listCategories() {
+			List<Type> listCategories = entityManager
+					.createQuery("FROM Type WHERE parent.id is null", Type.class)
+					.getResultList();
+			entityManager.close();
+			
+			return listCategories; 
+	}
+	
+	public List<Type> getListChildByParentId(Type type) {
+		if (type.getChilds() instanceof PersistentBag || type.getChilds() == null) {
+
+			List<Type> listChilds = entityManager
+					.createQuery("FROM Type WHERE parent.id = :parent_id", Type.class)
+					.setParameter("parent_id", type.getId()).getResultList();
+			entityManager.close();
+			type.setChilds(listChilds);
+			return listChilds;
+		} else {
+			return type.getChilds();
+		}
+	}
 }

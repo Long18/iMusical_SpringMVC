@@ -9,25 +9,8 @@
                         <h4 class="card-title">Update Order</h4>
                     </div>
                     <div class="card-body">
-                        <?php
-
-use App\Models\Product;
-use App\Models\Type;
-                        use Illuminate\Support\Facades\Session;
-
-                        $message = Session::get('message');
-                        if ($message) {
-                            echo '<span class="text-alert">' . $message . '</span>';
-                            Session::put('message', null);
-                            // If message not empty -> make empty
-                        }
-
-                        $creator = $edit_order->getCreator();
-                        $buyer = $edit_order->getUser();
-                        ?>
                         <div class="form-validation">
-                            <form class="form-valide" action="{{ URL::to('admin/update-order/'.$edit_order->order_id) }}" method="post">
-                                {{ csrf_field() }}
+                            <form class="form-valide" action="<c:url value='update-order?id=${edit_order.id }'/>" method="post">
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="form-group row">
@@ -35,14 +18,14 @@ use App\Models\Type;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_code_order" name="val_code_order" value="{{$edit_order->order_code}}">
+                                                <input type="text" class="form-control" id="val_code_order" name="val_code_order" value="${edit_order.code}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val_export_day">Export Day<span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_export_day" name="val_export_day" value="{{$edit_order->order_export_date}}">
+                                                <input type="text" class="form-control" id="val_export_day" name="val_export_day" value="${edit_order.export_date}" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -50,7 +33,7 @@ use App\Models\Type;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_total_price_order" name="val_total_price_order" value="{{$edit_order->order_total_sum}}">
+                                                <input type="text" class="form-control" id="val_total_price_order" name="val_total_price_order" value="${edit_order.total_sum}" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -58,14 +41,14 @@ use App\Models\Type;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_transport_fee" name="val_transport_fee" value="{{$edit_order->transport_fee}}">
+                                                <input type="text" class="form-control" id="val_transport_fee" name="val_transport_fee" value="${edit_order.transport_fee}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val_transport_type">Transport Type<span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_transport_type" name="val_transport_type" value="{{$edit_order->transport_type}}">
+                                                <input type="text" class="form-control" id="val_transport_type" name="val_transport_type" value="${edit_order.transport_type}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -73,7 +56,7 @@ use App\Models\Type;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_created_at" name="val_created_at" value="{{$edit_order->created_at}}" disabled>
+                                                <input type="text" class="form-control" id="val_created_at" name="val_created_at" value="${edit_order.created_at}" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -81,7 +64,7 @@ use App\Models\Type;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_creator" name="val_creator" value="{{$creator->user_name}}" disabled>
+                                                <input type="text" class="form-control" id="val_creator" name="val_creator" value="${edit_order.created_by.user_name}" disabled>
                                             </div>
                                         </div>
                                     </div>
@@ -91,35 +74,35 @@ use App\Models\Type;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_buyer" name="val_buyer" value="{{$buyer->user_name}}" disabled>
+                                                <input type="text" class="form-control" id="val_buyer" name="val_buyer" value="${edit_order.user.user_name}" disabled>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val_delivery_name">Delivery Receiver
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_delivery_name" name="val_delivery_name" value="{{$edit_order->delivery_name}}">
+                                                <input type="text" class="form-control" id="val_delivery_name" name="val_delivery_name" value="${edit_order.delivery_name}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val_delivery_address">Delivery Address
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_delivery_address" name="val_delivery_address" value="{{$creator->delivery_address}}">
+                                                <input type="text" class="form-control" id="val_delivery_address" name="val_delivery_address" value="${edit_order.delivery_address}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val_delivery_phone">Delivery Phone
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_delivery_phone" name="val_delivery_phone" value="{{$edit_order->delivery_phone}}">
+                                                <input type="text" class="form-control" id="val_delivery_phone" name="val_delivery_phone" value="${edit_order.delivery_phone}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="val_delivery_email">Delivery Email
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_delivery_email" name="val_delivery_email" value="{{$edit_order->delivery_email}}">
+                                                <input type="text" class="form-control" id="val_delivery_email" name="val_delivery_email" value="${edit_order.delivery_email}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -127,7 +110,7 @@ use App\Models\Type;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_payment_method" name="val_payment_method" value="{{$edit_order->delivery_payment_method}}">
+                                                <input type="text" class="form-control" id="val_payment_method" name="val_payment_method" value="${edit_order.delivery_payment_method}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -135,7 +118,7 @@ use App\Models\Type;
                                                 <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="val_payment_status" name="val_payment_status" value="{{$edit_order->delivery_payment_status}}">
+                                                <input type="text" class="form-control" id="val_payment_status" name="val_payment_status" value="${edit_order.delivery_payment_status}">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -167,7 +150,7 @@ use App\Models\Type;
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Product type detail | <a href="{{ URL::to('admin/add-order-detail/'.$edit_order->order_id) }}" class="bg-success text-light " style="padding: 0.2rem 0.8rem; border-radius: 0.4rem;">Add Type Detail</a></h4>
+                        <h4 class="card-title">Order details </h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -175,7 +158,7 @@ use App\Models\Type;
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Product ID</th>
+                                        <th>Product</th>
                                         <th>Price</th>
                                         <th>Price Sale</th>
                                         <th>Qty</th>
@@ -184,31 +167,18 @@ use App\Models\Type;
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php
-                                    if ($order_details) {
-                                        foreach ($order_details as $order_detail) {
-                                    ?>
-                                            <tr>
-                                                <td>{{ $order_detail->order_detail_id }}</td>
-                                                <td>{{ $order_detail->product_id }}</td>
-                                                <td>{{$order_detail->order_detail_price}}</td>
-                                                <td>{{ $order_detail->order_detail_price_sale}}</td>
-                                                <td>{{ $order_detail->order_detail_quantity }}</td>
-                                                <td>{{$order_detail->getTotalSum()}}</td>
-                                                <td>
-                                                    <div class="d-flex">
-
-                                                        <a href="{{ URL::to('admin/edit-order-detail/'.$edit_order->order_id .'/'.$order_detail->order_detail_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                        <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-order-detail/' . $order_detail->order_detail_id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-
-                                                    </div>
-                                                </td>
+                                    <c:if test="${not empty edit_order.orderDetails }">
+                                    	<c:forEach items="${edit_order.orderDetails }" var="order_detail">
+                                    		<tr>
+                                                <td>${order_detail.id }</td>
+                                                <td>${order_detail.product.name }</td>
+                                                <td>${order_detail.order_detail_price}</td>
+                                                <td>${order_detail.order_detail_price_sale}</td>
+                                                <td>${order_detail.order_detail_quantity }</td>
+                                                <td>${order_detail.getTotalSum()}</td>
                                             </tr>
-                                    <?php
-                                        }
-                                    }
-                                    ?>
-
+                                    	</c:forEach>
+                                    </c:if>  
                                 </tbody>
                             </table>
                         </div>

@@ -1,638 +1,261 @@
-
-<div id="preloader">
-	<div class="sk-three-bounce">
-		<div class="sk-child sk-bounce1"></div>
-		<div class="sk-child sk-bounce2"></div>
-		<div class="sk-child sk-bounce3"></div>
-	</div>
-</div>
-
-
-<div id="main-wrapper">
-
-	<div class="nav-header">
-		<a href="{{ URL::to('/admin/dashboard') }}" class="brand-logo"> <img
-			class="logo-abbr" src="{{ asset('public/backend/images/logo.png') }}"
-			alt=""> <img class="logo-compact"
-			src="{{ asset('public/backend/images/logo-text.png') }}" alt="">
-			<img class="brand-title"
-			src="{{ asset('public/backend/images/logo-text.png') }}" alt="">
-		</a>
-		<div class="nav-control">
-			<div class="hamburger">
-				<span class="line"></span><span class="line"></span><span
-					class="line"></span>
-			</div>
-		</div>
-	</div>
-
-
-
-	<div class="chatbox">
-		<div class="chatbox-close"></div>
-		<div class="custom-tab-1">
-			<ul class="nav nav-tabs">
-				<li class="nav-item"><a class="nav-link" data-toggle="tab"
-					href="#notes">Notes</a></li>
-				<li class="nav-item"><a class="nav-link" data-toggle="tab"
-					href="#alerts">Alerts</a></li>
-				<li class="nav-item"><a class="nav-link active"
-					data-toggle="tab" href="#chat">Chat</a></li>
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane fade active show" id="chat" role="tabpanel">
-					<div class="card mb-sm-3 mb-md-0 contacts_card dlab-chat-user-box">
-						<div class="card-header chat-list-header text-center">
-							<a href="javascript:void(0)"><svg
-									xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
-									height="18px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none"
-										stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect fill="#000000" x="4"
-										y="11" width="16" height="2" rx="1" />
-                                            <rect fill="#000000"
-										opacity="0.3"
-										transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) "
-										x="4" y="11" width="16" height="2" rx="1" />
-                                        </g>
-                                    </svg></a>
-							<div>
-								<h6 class="mb-1">Chat List</h6>
-								<p class="mb-0">Show All</p>
-							</div>
-							<a href="javascript:void(0)"><svg
-									xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
-									height="18px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none"
-										stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24"
-										height="24" />
-                                            <circle fill="#000000"
-										cx="5" cy="12" r="2" />
-                                            <circle fill="#000000"
-										cx="12" cy="12" r="2" />
-                                            <circle fill="#000000"
-										cx="19" cy="12" r="2" />
-                                        </g>
-                                    </svg></a>
-						</div>
-						<div class="card-body contacts_body p-0 dlab-scroll  "
-							id="dlab_W_Contacts_Body">
-							<ul class="contacts">
-								<li class="name-first-letter">A</li>
-								<li class="active dlab-chat-user">
-									<div class="d-flex bd-highlight">
-										<div class="img_cont">
-											<img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
-												class="rounded-circle user_img') }}" alt="" /> <span
-												class="online_icon"></span>
-										</div>
-										<div class="user_info">
-											<span>Archie Parker</span>
-											<p>Kalid is online</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="card chat dlab-chat-history-box d-none">
-						<div class="card-header chat-list-header text-center">
-							<a href="javascript:void(0)" class="dlab-chat-history-back">
-								<svg xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
-									height="18px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none"
-										stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <polygon
-										points="0 0 24 0 24 24 0 24" />
-                                            <rect fill="#000000"
-										opacity="0.3"
-										transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000) "
-										x="14" y="7" width="2" height="10" rx="1" />
-                                            <path
-										d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z"
-										fill="#000000" fill-rule="nonzero"
-										transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997) " />
-                                        </g>
-                                    </svg>
-							</a>
-							<div>
-								<h6 class="mb-1">Chat with Khelesh</h6>
-								<p class="mb-0 text-success">Online</p>
-							</div>
-							<div class="dropdown">
-								<a href="javascript:void(0)" data-toggle="dropdown"><svg
-										xmlns="http://www.w3.org/2000/svg"
-										xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
-										height="18px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none"
-											stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0"
-											width="24" height="24" />
-                                                <circle fill="#000000"
-											cx="5" cy="12" r="2" />
-                                                <circle fill="#000000"
-											cx="12" cy="12" r="2" />
-                                                <circle fill="#000000"
-											cx="19" cy="12" r="2" />
-                                            </g>
-                                        </svg></a>
-								<ul class="dropdown-menu dropdown-menu-right">
-									<li class="dropdown-item"><i
-										class="fa fa-user-circle text-primary mr-2"></i> View profile</li>
-									<li class="dropdown-item"><i
-										class="fa fa-users text-primary mr-2"></i> Add to close
-										friends</li>
-									<li class="dropdown-item"><i
-										class="fa fa-plus text-primary mr-2"></i> Add to group</li>
-									<li class="dropdown-item"><i
-										class="fa fa-ban text-primary mr-2"></i> Block</li>
-								</ul>
-							</div>
-						</div>
-						<div class="card-body msg_card_body dlab-scroll"
-							id="dlab_W_Contacts_Body3">
-							<div class="d-flex justify-content-start mb-4">
-								<div class="img_cont_msg">
-									<img src="{{ asset('public/backend/images/avatar/1.jpg') }}"
-										class="rounded-circle user_img_msg') }}" alt="" />
-								</div>
-								<div class="msg_cotainer">
-									Hi, how are you samim? <span class="msg_time">8:40 AM,
-										Today</span>
-								</div>
-							</div>
-
-						</div>
-						<div class="card-footer type_msg">
-							<div class="input-group">
-								<textarea class="form-control"
-									placeholder="Type your message..."></textarea>
-								<div class="input-group-append">
-									<button type="button" class="btn btn-primary">
-										<i class="fa fa-location-arrow"></i>
-									</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="tab-pane fade" id="alerts" role="tabpanel">
-					<div class="card mb-sm-3 mb-md-0 contacts_card">
-						<div class="card-header chat-list-header text-center">
-							<a href="javascript:void(0)"><svg
-									xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
-									height="18px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none"
-										stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24"
-										height="24" />
-                                            <circle fill="#000000"
-										cx="5" cy="12" r="2" />
-                                            <circle fill="#000000"
-										cx="12" cy="12" r="2" />
-                                            <circle fill="#000000"
-										cx="19" cy="12" r="2" />
-                                        </g>
-                                    </svg></a>
-							<div>
-								<h6 class="mb-1">Notications</h6>
-								<p class="mb-0">Show All</p>
-							</div>
-							<a href="javascript:void(0)"><svg
-									xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
-									height="18px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none"
-										stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24"
-										height="24" />
-                                            <path
-										d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
-										fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                            <path
-										d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
-										fill="#000000" fill-rule="nonzero" />
-                                        </g>
-                                    </svg></a>
-						</div>
-						<div class="card-body contacts_body p-0 dlab-scroll"
-							id="dlab_W_Contacts_Body1">
-							<ul class="contacts">
-								<li class="name-first-letter">SEVER STATUS</li>
-								<li class="active">
-									<div class="d-flex bd-highlight">
-										<div class="img_cont primary">KK</div>
-										<div class="user_info">
-											<span>David Nester Birthday</span>
-											<p class="text-primary">Today</p>
-										</div>
-									</div>
-								</li>
-								<li class="name-first-letter">SOCIAL</li>
-								<li>
-									<div class="d-flex bd-highlight">
-										<div class="img_cont success">
-											RU<i class="icon fa-birthday-cake"></i>
-										</div>
-										<div class="user_info">
-											<span>Perfection Simplified</span>
-											<p>Jame Smith commented on your status</p>
-										</div>
-									</div>
-								</li>
-								<li class="name-first-letter">SEVER STATUS</li>
-								<li>
-									<div class="d-flex bd-highlight">
-										<div class="img_cont primary">
-											AU<i class="icon fa fa-user-plus"></i>
-										</div>
-										<div class="user_info">
-											<span>AharlieKane</span>
-											<p>Sami is online</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="d-flex bd-highlight">
-										<div class="img_cont info">
-											MO<i class="icon fa fa-user-plus"></i>
-										</div>
-										<div class="user_info">
-											<span>Athan Jacoby</span>
-											<p>Nargis left 30 mins ago</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="card-footer"></div>
-					</div>
-				</div>
-				<div class="tab-pane fade" id="notes">
-					<div class="card mb-sm-3 mb-md-0 note_card">
-						<div class="card-header chat-list-header text-center">
-							<a href="javascript:void(0)"><svg
-									xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
-									height="18px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none"
-										stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect fill="#000000" x="4"
-										y="11" width="16" height="2" rx="1" />
-                                            <rect fill="#000000"
-										opacity="0.3"
-										transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) "
-										x="4" y="11" width="16" height="2" rx="1" />
-                                        </g>
-                                    </svg></a>
-							<div>
-								<h6 class="mb-1">Notes</h6>
-								<p class="mb-0">Add New Nots</p>
-							</div>
-							<a href="javascript:void(0)"><svg
-									xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
-									height="18px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none"
-										stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <rect x="0" y="0" width="24"
-										height="24" />
-                                            <path
-										d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z"
-										fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                            <path
-										d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z"
-										fill="#000000" fill-rule="nonzero" />
-                                        </g>
-                                    </svg></a>
-						</div>
-						<div class="card-body contacts_body p-0 dlab-scroll"
-							id="dlab_W_Contacts_Body2">
-							<ul class="contacts">
-								<li class="active">
-									<div class="d-flex bd-highlight">
-										<div class="user_info">
-											<span>New order placed..</span>
-											<p>10 Aug 2020</p>
-										</div>
-										<div class="ml-auto">
-											<a href="javascript:void(0)"
-												class="btn btn-primary btn-xs sharp mr-1"><i
-												class="fa fa-pencil"></i></a> <a href="javascript:void(0)"
-												class="btn btn-danger btn-xs sharp"><i
-												class="fa fa-trash"></i></a>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="d-flex bd-highlight">
-										<div class="user_info">
-											<span>Youtube, a video-sharing website..</span>
-											<p>10 Aug 2020</p>
-										</div>
-										<div class="ml-auto">
-											<a href="javascript:void(0)"
-												class="btn btn-primary btn-xs sharp mr-1"><i
-												class="fa fa-pencil"></i></a> <a href="javascript:void(0)"
-												class="btn btn-danger btn-xs sharp"><i
-												class="fa fa-trash"></i></a>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="d-flex bd-highlight">
-										<div class="user_info">
-											<span>john just buy your product..</span>
-											<p>10 Aug 2020</p>
-										</div>
-										<div class="ml-auto">
-											<a href="javascript:void(0)"
-												class="btn btn-primary btn-xs sharp mr-1"><i
-												class="fa fa-pencil"></i></a> <a href="javascript:void(0)"
-												class="btn btn-danger btn-xs sharp"><i
-												class="fa fa-trash"></i></a>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="d-flex bd-highlight">
-										<div class="user_info">
-											<span>Athan Jacoby</span>
-											<p>10 Aug 2020</p>
-										</div>
-										<div class="ml-auto">
-											<a href="javascript:void(0)"
-												class="btn btn-primary btn-xs sharp mr-1"><i
-												class="fa fa-pencil"></i></a> <a href="javascript:void(0)"
-												class="btn btn-danger btn-xs sharp"><i
-												class="fa fa-trash"></i></a>
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<div class="header">
-		<div class="header-content">
-			<nav class="navbar navbar-expand">
-				<div class="collapse navbar-collapse justify-content-between">
-					<div class="header-left">
-						<div class="dashboard_bar">Dashboard</div>
-					</div>
-					<ul class="navbar-nav header-right">
-						<!-- <li class="nav-item">
-                                <div class="input-group search-area d-lg-inline-flex d-none">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-381-search-2"></i></a></span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Search here...">
-                                </div>
-                            </li> -->
-						<!-- <li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link bell bell-link" href="javascript:void(0)">
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2.23779 10.2492L4.66679 11.7064V8.30554L2.23779 10.2492Z" fill="#67636D" />
-                                        <path d="M1.1665 12.327V23.3334C1.16852 23.8531 1.28817 24.3656 1.5165 24.8325L9.20134 17.15L1.1665 12.327Z" fill="#67636D" />
-                                        <path d="M26.4832 24.8325C26.7115 24.3656 26.8311 23.8531 26.8332 23.3334V12.327L18.7983 17.15L26.4832 24.8325Z" fill="#67636D" />
-                                        <path d="M23.3335 8.30554V11.7064L25.7625 10.2492L23.3335 8.30554Z" fill="#67636D" />
-                                        <path d="M21.0492 13.0772C21.024 12.998 21.0076 12.9162 21.0002 12.8334V7.00004C21.0002 6.69062 20.8773 6.39388 20.6585 6.17508C20.4397 5.95629 20.1429 5.83337 19.8335 5.83337H8.16684C7.85742 5.83337 7.56067 5.95629 7.34188 6.17508C7.12309 6.39388 7.00017 6.69062 7.00017 7.00004V12.8334C6.99274 12.9162 6.97631 12.998 6.95117 13.0772L14.0002 17.3064L21.0492 13.0772Z" fill="#67636D" />
-                                        <path d="M17.3262 3.50003L14.7292 1.4222C14.5222 1.25653 14.2651 1.16626 14 1.16626C13.7349 1.16626 13.4777 1.25653 13.2708 1.4222L10.6738 3.50003H17.3262Z" fill="#67636D" />
-                                        <path d="M16.7358 18.3855L14.6008 19.6688C14.4194 19.7778 14.2117 19.8354 14 19.8354C13.7883 19.8354 13.5806 19.7778 13.3991 19.6688L11.2641 18.3855L3.16748 26.4833C3.63438 26.7117 4.14691 26.8313 4.66665 26.8333H23.3333C23.853 26.8313 24.3656 26.7117 24.8325 26.4833L16.7358 18.3855Z" fill="#67636D" />
-                                    </svg>
-                                    <span class="badge light text-white bg-primary rounded-circle">6</span>
-                                </a>
-                            </li> -->
-						<!-- <li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link  ai-icon" href="javascript:void(0)" role="button" data-toggle="dropdown">
-                                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M23.3333 19.8333H23.1187C23.2568 19.4597 23.3295 19.065 23.3333 18.6666V12.8333C23.3294 10.7663 22.6402 8.75902 21.3735 7.12565C20.1068 5.49228 18.3343 4.32508 16.3333 3.80679V3.49996C16.3333 2.88112 16.0875 2.28763 15.6499 1.85004C15.2123 1.41246 14.6188 1.16663 14 1.16663C13.3812 1.16663 12.7877 1.41246 12.3501 1.85004C11.9125 2.28763 11.6667 2.88112 11.6667 3.49996V3.80679C9.66574 4.32508 7.89317 5.49228 6.6265 7.12565C5.35983 8.75902 4.67058 10.7663 4.66667 12.8333V18.6666C4.67053 19.065 4.74316 19.4597 4.88133 19.8333H4.66667C4.35725 19.8333 4.0605 19.9562 3.84171 20.175C3.62292 20.3938 3.5 20.6905 3.5 21C3.5 21.3094 3.62292 21.6061 3.84171 21.8249C4.0605 22.0437 4.35725 22.1666 4.66667 22.1666H23.3333C23.6428 22.1666 23.9395 22.0437 24.1583 21.8249C24.3771 21.6061 24.5 21.3094 24.5 21C24.5 20.6905 24.3771 20.3938 24.1583 20.175C23.9395 19.9562 23.6428 19.8333 23.3333 19.8333Z" fill="#67636D" />
-                                        <path d="M9.98193 24.5C10.3863 25.2088 10.971 25.7981 11.6767 26.2079C12.3823 26.6178 13.1839 26.8337 13.9999 26.8337C14.816 26.8337 15.6175 26.6178 16.3232 26.2079C17.0289 25.7981 17.6136 25.2088 18.0179 24.5H9.98193Z" fill="#67636D" />
-                                    </svg>
-                                    <span class="badge light text-white bg-primary rounded-circle">4</span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <div id="dlab_W_Notification1" class="widget-media dlab-scroll p-3 height380">
-                                        <ul class="timeline">
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media mr-2">
-                                                        <img alt="image" width="50" src="{{ asset('public/backend/images/avatar/1.jpg') }}">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Dr sultads Send you Photo</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media mr-2 media-info">
-                                                        KG
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Resport created successfully</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media mr-2 media-success">
-                                                        <i class="fa fa-home"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Reminder : Treatment Time!</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media mr-2">
-                                                        <img alt="image" width="50" src="{{ asset('public/backend/images/avatar/1.jpg') }}">
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Dr sultads Send you Photo</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media mr-2 media-danger">
-                                                        KG
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Resport created successfully</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="timeline-panel">
-                                                    <div class="media mr-2 media-primary">
-                                                        <i class="fa fa-home"></i>
-                                                    </div>
-                                                    <div class="media-body">
-                                                        <h6 class="mb-1">Reminder : Treatment Time!</h6>
-                                                        <small class="d-block">29 July 2020 - 02:26 PM</small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <a class="all-notification" href="javascript:void(0)">See all notifications <i class="ti-arrow-right"></i></a>
-                                </div>
-                            </li> -->
-						<li class="nav-item dropdown header-profile"><a
-							class="nav-link" href="javascript:void(0)" role="button"
-							data-toggle="dropdown"> <img
-								src="{{ asset('public/backend/images/profile/17.jpg') }}"
-								width="20" alt="" />
-								<div class="header-info">
-									<?php
-                                            $name = Session::get('user_name');
-                                            ?>
-									<p class="fs-12 mb-0">{{$name}}</p>
-								</div>
-						</a>
-							<div class="dropdown-menu dropdown-menu-right">
-								<a href="app-profile.html" class="dropdown-item ai-icon"> <svg
-										id="icon-user1" xmlns="http://www.w3.org/2000/svg"
-										class="text-primary" width="18" height="18"
-										viewBox="0 0 24 24" fill="none" stroke="currentColor"
-										stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round">
-                                            <path
-											d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                            <circle cx="12" cy="7" r="4"></circle>
-                                        </svg> <span class="ml-2">Profile
-								</span>
-								</a> <a href="email-inbox.html" class="dropdown-item ai-icon"> <svg
-										id="icon-inbox" xmlns="http://www.w3.org/2000/svg"
-										class="text-success" width="18" height="18"
-										viewBox="0 0 24 24" fill="none" stroke="currentColor"
-										stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round">
-                                            <path
-											d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                            </path>
-                                            <polyline
-											points="22,6 12,13 2,6"></polyline>
-                                        </svg> <span class="ml-2">Inbox
-								</span>
-								</a> <a href="{{ URL::to('admin/logout') }}"
-									class="dropdown-item ai-icon"> <svg id="icon-logout"
-										xmlns="http://www.w3.org/2000/svg" class="text-danger"
-										width="18" height="18" viewBox="0 0 24 24" fill="none"
-										stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round">
-                                            <path
-											d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                            <polyline
-											points="16 17 21 12 16 7"></polyline>
-                                            <line x1="21" y1="12" x2="9"
-											y2="12"></line>
-                                        </svg> <span class="ml-2">Logout
-								</span>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<header id="header_main" class="header_1 js-header">
+	<div class="themesflat-container">
+		<div class="row">
+			<div class="col-md-12">
+				<div id="site-header-inner">
+					<div class="wrap-box flex">
+						<div id="site-logo" class="clearfix">
+							<div id="site-logo-inner">
+								<a href="<c:url value='/'/>" rel="home" class="main-logo"> 
+								<img
+									id="logo_header"
+									src="<c:url value='/resources/template/FE/images/logo/logo_dark.png'/>"
+									alt="iMusic" width="133" height="56"
+									data-retina="<c:url value='/resources/template/FE/images/logo/logo.png'/>"
+									data-width="133" data-height="56">
 								</a>
-							</div></li>
-					</ul>
+							</div>
+						</div>
+						<div class="mobile-button">
+							<span></span>
+						</div>
+						<!-- /.mobile-button -->
+						<nav id="main-nav" class="main-nav">
+							<ul id="menu-primary-menu" class="menu">
+								<li class="menu-item"><a href="<c:url value='/explore'/>">Explore</a>
+								</li>
+								<li class="menu-item"><a href="<c:url value='/activity'/>">Activity</a>
+								</li>
+								<li class="menu-item menu-item-has-children"><a href="#">Community</a>
+									<ul class="sub-menu">
+										<li class="menu-item"><a href="<c:url value='/blog'/>">Blog</a></li>
+										<li class="menu-item"><a
+											href="<c:url value='/blog-detail'/>">Blog Details</a></li>
+										<li class="menu-item"><a
+											href="<c:url value='/help-center'/>">Help Center</a></li>
+									</ul></li>
+								<li class="menu-item menu-item-has-children"><a href="#">Pages</a>
+									<ul class="sub-menu">
+										<li class="menu-item"><a href="author01.html">Authors</a></li>
+										<li class="menu-item"><a href="author02.html">Authors
+												2</a></li>
+										<li class="menu-item"><a href="connect-wallet.html">Wallet
+												Connect</a></li>
+										<li class="menu-item"><a href="create-item.html">Create
+												Item</a></li>
+										<li class="menu-item"><a href="profile.html">Edit
+												Profile</a></li>
+
+										<li class="menu-item"><a href="ranking.html">Ranking</a></li>
+										<li class="menu-item"><a href="login.html">Login</a></li>
+										<li class="menu-item"><a href="signup.html">Sign Up</a></li>
+										<li class="menu-item"><a href="no-result.html">No
+												Result</a></li>
+										<li class="menu-item"><a href="faq.html">FAQ</a></li>
+									</ul></li>
+								<li class="menu-item "><a href="<c:url value='/contact'/>">Contact</a>
+								</li>
+								<li class="menu-item current-menu-item"><a
+									href="<c:url value='/cart'/>">Cart</a></li>
+							</ul>
+						</nav>
+						<!-- /#main-nav -->
+						<div class="flat-search-btn flex">
+							<div class="header-search flat-show-search" id="s1">
+								<a href="#" class="show-search header-search-trigger"> <svg
+										width="20" height="20" viewBox="0 0 20 20" fill="none"
+										xmlns="http://www.w3.org/2000/svg">
+                                                    <mask
+											id="mask0_334_638" style="mask-type:alpha"
+											maskUnits="userSpaceOnUse" x="1" y="1" width="18" height="17">
+                                                        <path
+											fill-rule="evenodd" clip-rule="evenodd"
+											d="M1.66699 1.66666H17.6862V17.3322H1.66699V1.66666Z"
+											fill="white" stroke="white" />
+                                                    </mask>
+                                                    <g
+											mask="url(#mask0_334_638)">
+                                                        <path
+											fill-rule="evenodd" clip-rule="evenodd"
+											d="M9.67711 2.87312C5.9406 2.87312 2.90072 5.84505 2.90072 9.49903C2.90072 13.153 5.9406 16.1257 9.67711 16.1257C13.4128 16.1257 16.4527 13.153 16.4527 9.49903C16.4527 5.84505 13.4128 2.87312 9.67711 2.87312ZM9.67709 17.3322C5.26039 17.3322 1.66699 13.8182 1.66699 9.49902C1.66699 5.17988 5.26039 1.66666 9.67709 1.66666C14.0938 1.66666 17.6864 5.17988 17.6864 9.49902C17.6864 13.8182 14.0938 17.3322 9.67709 17.3322Z"
+											fill="white" />
+                                                        <path
+											d="M9.67711 2.37312C5.67512 2.37312 2.40072 5.55836 2.40072 9.49903H3.40072C3.40072 6.13174 6.20607 3.37312 9.67711 3.37312V2.37312ZM2.40072 9.49903C2.40072 13.4396 5.67504 16.6257 9.67711 16.6257V15.6257C6.20615 15.6257 3.40072 12.8664 3.40072 9.49903H2.40072ZM9.67711 16.6257C13.6784 16.6257 16.9527 13.4396 16.9527 9.49903H15.9527C15.9527 12.8664 13.1472 15.6257 9.67711 15.6257V16.6257ZM16.9527 9.49903C16.9527 5.5584 13.6783 2.37312 9.67711 2.37312V3.37312C13.1473 3.37312 15.9527 6.1317 15.9527 9.49903H16.9527ZM9.67709 16.8322C5.52595 16.8322 2.16699 13.5316 2.16699 9.49902H1.16699C1.16699 14.1048 4.99484 17.8322 9.67709 17.8322V16.8322ZM2.16699 9.49902C2.16699 5.46656 5.52588 2.16666 9.67709 2.16666V1.16666C4.9949 1.16666 1.16699 4.8932 1.16699 9.49902H2.16699ZM9.67709 2.16666C13.8282 2.16666 17.1864 5.46649 17.1864 9.49902H18.1864C18.1864 4.89327 14.3593 1.16666 9.67709 1.16666V2.16666ZM17.1864 9.49902C17.1864 13.5316 13.8282 16.8322 9.67709 16.8322V17.8322C14.3594 17.8322 18.1864 14.1047 18.1864 9.49902H17.1864Z"
+											fill="white" />
+                                                    </g>
+                                                    <mask
+											id="mask1_334_638" style="mask-type:alpha"
+											maskUnits="userSpaceOnUse" x="13" y="13" width="6" height="6">
+                                                        <path
+											fill-rule="evenodd" clip-rule="evenodd"
+											d="M14.2012 14.2999H18.3333V18.3333H14.2012V14.2999Z"
+											fill="white" stroke="white" />
+                                                    </mask>
+                                                    <g
+											mask="url(#mask1_334_638)">
+                                                        <path
+											fill-rule="evenodd" clip-rule="evenodd"
+											d="M17.7166 18.3333C17.5596 18.3333 17.4016 18.2746 17.2807 18.1572L14.3823 15.3308C14.1413 15.0952 14.1405 14.7131 14.3815 14.4774C14.6217 14.2402 15.0123 14.2418 15.2541 14.4758L18.1526 17.303C18.3935 17.5387 18.3944 17.9199 18.1534 18.1556C18.0333 18.2746 17.8746 18.3333 17.7166 18.3333Z"
+											fill="white" />
+                                                        <path
+											d="M17.7166 18.3333C17.5595 18.3333 17.4016 18.2746 17.2807 18.1572L14.3823 15.3308C14.1413 15.0952 14.1405 14.7131 14.3815 14.4774C14.6217 14.2402 15.0123 14.2418 15.2541 14.4758L18.1526 17.303C18.3935 17.5387 18.3944 17.9199 18.1534 18.1556C18.0333 18.2746 17.8746 18.3333 17.7166 18.3333"
+											stroke="white" />
+                                                    </g>
+                                                </svg>
+								</a>
+								<div class="top-search">
+									<form action="<c:url value='/search'/>" method="POST"
+										role="search" class="search-form">
+										@csrf <input type="search" id="keyword" class="search-field"
+											placeholder="Search..." value="" name="keyword"
+											title="Search for" required="">
+										<button class="search search-submit" type="submit"
+											title="Search">
+											<i class="icon-fl-search-filled"></i>
+										</button>
+									</form>
+								</div>
+							</div>
+
+							@php $login_check = Session::get('user_name'); @endphp
+
+							<div class="sc-btn-top mg-r-12" id="site-header"
+								style="display: <?php
+if ($login_check) {
+    echo 'none';
+} else {
+    echo 'block';
+}
+?>">
+								<a href="<c:url value='/login'/>" id="connectbtn"
+									class="sc-button header-slider style style-1 wallet fl-button pri-1"><span>Login
+								</span></a>
+							</div>
+
+							<div class="admin_active" id="header_admin"
+								style="display: <?php
+if ($login_check) {
+    echo 'block';
+} else {
+    echo 'none';
+}
+?>">
+								<div class="header_avatar">
+									<div class="popup-notification">
+										<div class="notification">
+											<span class="number">3</span>
+											<svg width="19" height="22" viewBox="0 0 19 22" fill="#fff"
+												xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+													d="M18.4915 15.495L17.209 13.65C17.0339 13.3992 16.9397 13.1009 16.939 12.795V7.5C16.939 5.51088 16.1488 3.60322 14.7423 2.1967C13.3357 0.790176 11.4281 0 9.43896 0C7.44984 0 5.54218 0.790176 4.13566 2.1967C2.72914 3.60322 1.93896 5.51088 1.93896 7.5V12.795C1.93824 13.1009 1.84403 13.3992 1.66896 13.65L0.386463 15.495C0.192273 15.7102 0.064576 15.977 0.018815 16.2632C-0.0269461 16.5494 0.0111884 16.8427 0.128607 17.1077C0.246026 17.3727 0.437699 17.598 0.680449 17.7563C0.923199 17.9147 1.20663 17.9993 1.49646 18H5.76396C5.9361 18.8477 6.39601 19.6099 7.06577 20.1573C7.73553 20.7047 8.57394 21.0038 9.43896 21.0038C10.304 21.0038 11.1424 20.7047 11.8122 20.1573C12.4819 19.6099 12.9418 18.8477 13.114 18H17.3815C17.6713 17.9993 17.9547 17.9147 18.1975 17.7563C18.4402 17.598 18.6319 17.3727 18.7493 17.1077C18.8667 16.8427 18.9049 16.5494 18.8591 16.2632C18.8133 15.977 18.6856 15.7102 18.4915 15.495ZM9.43896 19.5C8.97475 19.4987 8.52231 19.3538 8.14366 19.0853C7.76501 18.8168 7.4787 18.4377 7.32396 18H11.554C11.3992 18.4377 11.1129 18.8168 10.7343 19.0853C10.3556 19.3538 9.90317 19.4987 9.43896 19.5ZM1.49646 16.5C1.53036 16.4685 1.56056 16.4333 1.58646 16.395L2.89896 14.505C3.24909 14.0034 3.43751 13.4067 3.43896 12.795V7.5C3.43896 5.9087 4.0711 4.38258 5.19632 3.25736C6.32154 2.13214 7.84766 1.5 9.43896 1.5C11.0303 1.5 12.5564 2.13214 13.6816 3.25736C14.8068 4.38258 15.439 5.9087 15.439 7.5V12.795C15.4404 13.4067 15.6288 14.0034 15.979 14.505L17.2915 16.395C17.3174 16.4333 17.3476 16.4685 17.3815 16.5H1.49646Z"
+													fill="white" />
+                                                        </svg>
+										</div>
+										<div class="avatar_popup2 mt-20">
+											<div class="show mg-bt-18">
+												<h4>Notifications</h4>
+												<a href="#">Show All</a>
+											</div>
+											<div class="flat-tabs">
+												<ul class="menu-tab">
+													<li class="active"><span>All</span></li>
+													<li><span>Unread</span></li>
+												</ul>
+												<div class="content-tab">
+													<div class="content-inner">
+														<div class="wrap-box">
+															<div class="heading">Yesterday</div>
+															<div class="sc-box">
+																<div class="content">
+																	<div class="avatar">
+																		<img
+																			src="<c:url value='/resources/template/FE/images/avatar/avt-6.jpg'/>"
+																			alt="">
+																	</div>
+																	<div class="infor">
+																		<span class="fw-7">Tyler Covington</span> <span>started
+																			following you.</span>
+																		<p>1 hour ago</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="popup-user">
+										<img class="avatar"
+											src="<c:url value='/resources/template/FE/images/avatar/avt-5.jpg'/>"
+											alt="avatar" />
+										<div class="avatar_popup mt-20">
+											<h4>@php echo $login_check; @endphp</h4>
+											{{--
+											<div class="d-flex align-items-center mt-20 mg-bt-12">
+												<div class="info">
+													<p>Balance</p>
+													<p class="style">45.57 ETH</p>
+												</div>
+											</div>
+											--}}
+
+											<div class="divider"></div>
+											<div class="hr"></div>
+											<div class="links mt-20">
+												<a href="<c:url value='/profile'/>"> <svg width="20"
+														height="20" viewBox="0 0 20 20" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+															d="M0.774902 18.333C0.774902 18.7932 1.14762 19.1664 1.60824 19.1664C2.06885 19.1664 2.44157 18.7932 2.44157 18.333C2.44157 15.3923 4.13448 12.7889 6.77329 11.5578C7.68653 12.1513 8.77296 12.4997 9.94076 12.4997C11.113 12.4997 12.2036 12.1489 13.119 11.5513C13.9067 11.9232 14.6368 12.4235 15.2443 13.0307C16.6611 14.4479 17.4416 16.3311 17.4416 18.333C17.4416 18.7932 17.8143 19.1664 18.2749 19.1664C18.7355 19.1664 19.1083 18.7932 19.1083 18.333C19.1083 15.8859 18.1545 13.5845 16.4227 11.8523C15.8432 11.2725 15.1698 10.7754 14.4472 10.3655C15.2757 9.3581 15.7741 8.06944 15.7741 6.66635C15.7741 3.44979 13.1569 0.833008 9.94076 0.833008C6.72461 0.833008 4.10742 3.44979 4.10742 6.66635C4.10742 8.06604 4.60379 9.35154 5.42863 10.3579C2.56796 11.9685 0.774902 14.9779 0.774902 18.333V18.333ZM9.94076 2.49968C12.2381 2.49968 14.1074 4.36898 14.1074 6.66635C14.1074 8.96371 12.2381 10.833 9.94076 10.833C7.6434 10.833 5.77409 8.96371 5.77409 6.66635C5.77409 4.36898 7.6434 2.49968 9.94076 2.49968V2.49968Z"
+															fill="white" />
+                                                                </svg> <span>My
+														Profile</span>
+												</a> <a class="mt-10" href="<c:url value='/checkout'/>"> <svg
+														width="20" height="18" viewBox="0 0 20 18" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+															d="M17.1154 0.730469H2.88461C1.29402 0.730469 0 2.02449 0 3.61508V14.3843C0 15.9749 1.29402 17.2689 2.88461 17.2689H17.1154C18.706 17.2689 20 15.9749 20 14.3843V3.61508C20 2.02449 18.706 0.730469 17.1154 0.730469ZM18.7529 10.6035H14.6154C13.6611 10.6035 13 9.95407 13 8.99969C13 8.04532 13.661 7.34544 14.6154 7.34544H18.7529V10.6035ZM18.7529 6.11508H14.6154C13.0248 6.11508 11.7308 7.40911 11.7308 8.99969C11.7308 10.5903 13.0248 11.8843 14.6154 11.8843H18.7529V14.3843C18.7529 15.3386 18.0698 15.9996 17.1154 15.9996H2.88461C1.93027 15.9996 1.29231 15.3387 1.29231 14.3843V3.61508C1.29231 2.66074 1.93023 1.99963 2.88461 1.99963H17.1266C18.0809 1.99963 18.7529 2.6607 18.7529 3.61508V6.11508Z"
+															fill="white" />
+                                                                </svg> <span>Checkout</span>
+												</a> <a class="mt-10" href="<c:url value='/logout'/>"
+													id="logout"> <svg width="20" height="20"
+														viewBox="0 0 20 20" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+															d="M9.9668 18.3057H2.49168C2.0332 18.3057 1.66113 17.9335 1.66113 17.4751V2.52492C1.66113 2.06644 2.03324 1.69437 2.49168 1.69437H9.9668C10.4261 1.69437 10.7973 1.32312 10.7973 0.863828C10.7973 0.404531 10.4261 0.0332031 9.9668 0.0332031H2.49168C1.11793 0.0332031 0 1.15117 0 2.52492V17.4751C0 18.8488 1.11793 19.9668 2.49168 19.9668H9.9668C10.4261 19.9668 10.7973 19.5955 10.7973 19.1362C10.7973 18.6769 10.4261 18.3057 9.9668 18.3057Z"
+															fill="white" />
+                                                                    <path
+															d="M19.7525 9.40904L14.7027 4.42564C14.3771 4.10337 13.8505 4.10755 13.5282 4.43396C13.206 4.76036 13.2093 5.28611 13.5366 5.60837L17.1454 9.16982H7.47508C7.01578 9.16982 6.64453 9.54107 6.64453 10.0004C6.64453 10.4597 7.01578 10.8309 7.47508 10.8309H17.1454L13.5366 14.3924C13.2093 14.7147 13.2068 15.2404 13.5282 15.5668C13.691 15.7313 13.9053 15.8143 14.1196 15.8143C14.3306 15.8143 14.5415 15.7346 14.7027 15.5751L19.7525 10.5917C19.9103 10.4356 20 10.2229 20 10.0003C20 9.77783 19.9111 9.56603 19.7525 9.40904Z"
+															fill="white" />
+                                                                </svg> <span>Log
+														out</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			</nav>
-		</div>
-	</div>
-
-
-
-
-	<div class="dlabnav">
-		<div class="dlabnav-scroll">
-			<ul class="metismenu" id="menu">
-				<li><a class="has-arrow ai-icon" href="javascript:void()"
-					aria-expanded="false"> <i class="flaticon-381-networking"></i>
-						<span class="nav-text">Menu</span>
-				</a>
-					<ul aria-expanded="false">
-						<li><a href="{{ URL::to('/admin/dashboard') }}">Dashboard</a></li>
-						<!-- <li><a href="calendar.html">Calendar</a></li>
-                            <li><a href="messages.html">Messages</a></li> -->
-					</ul></li>
-				<li><a class="has-arrow ai-icon" href="javascript:void()"
-					aria-expanded="false"> <i class="flaticon-381-layer-1"></i> <span
-						class="nav-text">Order Manager</span>
-				</a>
-					<ul aria-expanded="false">
-						<li><a href="{{ URL::to('/admin/all-orders') }}">All
-								Order</a></li>
-					</ul></li>
-				<li><a class="has-arrow ai-icon" href="javascript:void()"
-					aria-expanded="false"> <i class="flaticon-381-network"></i> <span
-						class="nav-text">Products</span>
-				</a>
-					<ul aria-expanded="false">
-						<li><a href="{{ URL::to('/admin/all-products') }}">All
-								Products</a></li>
-						<li><a href="{{ URL::to('/admin/add-product') }}">Add
-								Product</a></li>
-					</ul></li>
-				<li><a class="has-arrow ai-icon" href="javascript:void()"
-					aria-expanded="false"> <i class="flaticon-381-layer-1"></i> <span
-						class="nav-text">Types</span>
-				</a>
-					<ul aria-expanded="false">
-						<li><a href="{{ URL::to('/admin/all-types') }}">All Types</a></li>
-						<li><a href="{{ URL::to('/admin/add-type') }}">Add Type</a></li>
-					</ul></li>
-				<li><a class="has-arrow ai-icon" href="javascript:void()"
-					aria-expanded="false"> <i class="flaticon-381-price-tag"></i> <span
-						class="nav-text">Brands</span>
-				</a>
-					<ul aria-expanded="false">
-						<li><a href="{{ URL::to('/admin/all-brands') }}">All
-								Brands</a></li>
-						<li><a href="{{ URL::to('/admin/add-brand') }}">Add Brand</a></li>
-					</ul></li>
-				<li><a class="has-arrow ai-icon" href="javascript:void()"
-					aria-expanded="false"> <i class="flaticon-381-user-4"></i> <span
-						class="nav-text">Users Manager</span>
-				</a>
-					<ul aria-expanded="false">
-						<li><a href="{{ URL::to('/admin/all-users') }}">All User</a></li>
-					</ul></li>
-				<li><a class="has-arrow ai-icon" href="javascript:void()"
-					aria-expanded="false"> <i class="flaticon-381-menu"></i> <span
-						class="nav-text">Sliders</span>
-				</a>
-					<ul aria-expanded="false">
-						<li><a href="{{ URL::to('/admin/all-sliders') }}">All
-								Slider</a></li>
-						<li><a href="{{ URL::to('/admin/add-slider') }}">Add
-								Slider</a></li>
-					</ul></li>
-			</ul>
-
-			<a class="add-menu-sidebar d-block" href="javascript:void(0)"
-				data-toggle="modal" data-target="#addOrderModalside">+ New
-				Project</a>
-			<div class="copyright">
-				<p>
-					<strong>Admin Dashboard</strong> © 2022 All Rights Reserved
-				</p>
-				<p>
-					Made with <span class="heart"></span> by Isekai Team
-				</p>
 			</div>
 		</div>
 	</div>
+	<div class="mode_switcher">
+		<h6>
+			Dark mode <strong>Available</strong>
+		</h6>
+		<a href="#" class="light d-flex align-items-center"> <img
+			src="<c:url value='/resources/template/FE/images/icon/sun.png'/>"
+			alt="">
+		</a> <a href="#" class="dark d-flex align-items-center is_active"> <img
+			id="moon_dark"
+			src="<c:url value='/resources/template/FE/images/icon/moon-2.png'/>"
+			alt="">
+		</a>
+	</div>
+</header>
+<!-- Header -->

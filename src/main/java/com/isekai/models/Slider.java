@@ -21,7 +21,7 @@ public class Slider {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "slider_id")
-	private int id;
+	private Integer id;
 
 	@Column(name = "slider_name")
 	private String slider_name;
@@ -44,14 +44,14 @@ public class Slider {
 	private User created_by;
 
 	@Column(name = "status")
-	private int status;
+	private Integer status;
 
 	public Slider() {
 		super();
 	}
 
-	public Slider(int id, String slider_name, String slider_url, String slider_position, String slider_img_url,
-			Date created_at, User created_by, int status) {
+	public Slider(Integer id, String slider_name, String slider_url, String slider_position, String slider_img_url,
+			Date created_at, User created_by, Integer status) {
 		super();
 		this.id = id;
 		this.slider_name = slider_name;
@@ -63,11 +63,11 @@ public class Slider {
 		this.status = status;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -119,11 +119,11 @@ public class Slider {
 		this.created_by = created_by;
 	}
 
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 	

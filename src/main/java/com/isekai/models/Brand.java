@@ -19,7 +19,7 @@ public class Brand {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="brand_id")
-	private int id;
+	private Integer id;
 	
 	@Column(name="brand_name")
 	private String name;
@@ -29,7 +29,7 @@ public class Brand {
 	private Date createdAt;
 	
 	@Column(name="status")
-	private int status;
+	private Integer status;
 	
 	@OneToMany(mappedBy = "brand")
 	private List<Product> products;
@@ -38,7 +38,7 @@ public class Brand {
 		super();
 	}
 
-	public Brand(int id, String name, Date createdAt, int status) {
+	public Brand(Integer id, String name, Date createdAt, Integer status) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -46,11 +46,11 @@ public class Brand {
 		this.status = status;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -70,11 +70,11 @@ public class Brand {
 		this.createdAt = createdAt;
 	}
 
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 

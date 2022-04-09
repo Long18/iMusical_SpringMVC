@@ -6,17 +6,6 @@
                 <div class="card-header">
                     <h4 class="card-title">Products</h4>
                 </div>
-                <?php
-use App\Models\Product;
-use Illuminate\Support\Facades\Session;
-
-                $message = Session::get('message');
-                if ($message) {
-                    echo '<span class="text-alert">' . $message . '</span>';
-                    Session::put('message', null);
-                    // If message not empty -> make empty
-                }
-                ?>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table id="example3" class="display min-w850">
@@ -34,45 +23,41 @@ use Illuminate\Support\Facades\Session;
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                if ($all_products) {
-                                    foreach ($all_products as $item => $product) {
-                                        $brand = $product->getBrand();
-                                        if($product->status == 1){
-                                            if($product->product_amount < 1){
-                                                $status = 'badge-warning';
-                                                $statusContent = 'Out of stock';
-                                            }else{
-                                                $status = 'badge-success';
-                                                $statusContent = 'Avaiable';
-                                            }
-                                        }else{
-                                            $status = 'badge-danger';
-                                            $statusContent = 'Unavaiable';
-                                        }
-                                ?>
-                                        <tr>
-                                            <td><img class="rounded-circle" width="35" src="{{ asset('public/backend/images/profile/small/pic1.jpg') }}" alt="">
+                                <c:if test="${not empty products }">
+                                	<c:forEach items="${products }" var="product">
+                                		<tr>
+                                            <td><img class="rounded-circle" width="35" src='<c:if test="${product.productImages.size() > 0 }"><c:url value='/${product.productImages.get(0).product_img_name }'/></c:if>' alt="">
                                             </td>
-                                            <td>{{ $product->product_name }}</td>
-                                            <td>{{ $brand->brand_name }}</td>
-                                            <td>{{ $product->product_price }}</td>
-                                            <td>{{ $product->product_sale_price }}</td>
-                                            <td>{{ $product->product_amount }}</td>
-                                            <td>{{ $product->create_at }}</td>
-                                            <td><span class='badge light {{ $status }} badge-sm'>{{ $statusContent }}</span></td>
+                                            <td>${product.name }</td>
+                                            <td>${product.brand.name }</td>
+                                            <td>${product.price }</td>
+                                            <td>${product.priceSale }</td>
+                                            <td>${product.amount }</td>
+                                            <td>${product.created_at }</td>
+                                            <td>
+                                            	<c:choose>
+                                            		<c:when test="${product.amount < 1 }">
+                                            		<span class='badge badge-warning light  badge-sm'>Out of stock</span>
+                                            		</c:when>
+                                            			
+                                            		<c:when test="${product.status == 1 }">
+                                            		<span class='badge badge-success light  badge-sm'>Available</span>
+                                            		</c:when>
+                                            		
+                                            		<c:when test="${product.status == 0 }">
+                                            		<span class='badge badge-danger light  badge-sm'>Unavailable</span>
+                                            		</c:when>
+                                            	</c:choose>
+                                            </td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <a href="{{ URL::to('admin/edit-product/' . $product->product_id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                    <a onclick="return confirm('Are you sure to delete?')" href="{{ URL::to('admin/delete-product/' . $product->product_id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    <a href="<c:url value='edit-product?id=${product.id }'/>" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                    <a onclick="return confirm('Are you sure to delete?')" href="<c:url value='delete-product?id=${product.id }'/>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
-                                <?php
-                                    }
-                                } 
-                                ?>
-
+                                	</c:forEach>
+                                </c:if>
                             </tbody>
                         </table>
                     </div>

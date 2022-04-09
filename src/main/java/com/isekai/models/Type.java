@@ -23,7 +23,7 @@ public class Type {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "type_id")
-	private int id;
+	private Integer id;
 
 	@Column(name = "type_name")
 	private String type_name;
@@ -54,19 +54,21 @@ public class Type {
 	
 
 	@Column(name = "status")
-	private int status;
+	private Integer status;
 	
 	@OneToMany(mappedBy = "type")
 	private List<TypeDetail> typeDetails;
 	
+	@OneToMany(mappedBy = "parent")
+	private List<Type> childs;
 
 	public Type() {
 		super();
 	}
 
 
-	public Type(int id, String type_name, String type_slug, String type_image_url, Type parent, String type_meta_key,
-			String type_meta_desc, Date create_at, User create_by, int status, List<TypeDetail> typeDetails) {
+	public Type(Integer id, String type_name, String type_slug, String type_image_url, Type parent, String type_meta_key,
+			String type_meta_desc, Date create_at, User create_by, Integer status, List<TypeDetail> typeDetails) {
 		super();
 		this.id = id;
 		this.type_name = type_name;
@@ -82,12 +84,12 @@ public class Type {
 	}
 
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -172,12 +174,12 @@ public class Type {
 	}
 
 
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
 
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 
@@ -189,6 +191,16 @@ public class Type {
 
 	public void setTypeDetails(List<TypeDetail> typeDetails) {
 		this.typeDetails = typeDetails;
+	}
+
+
+	public List<Type> getChilds() {
+		return childs;
+	}
+
+
+	public void setChilds(List<Type> childs) {
+		this.childs = childs;
 	}
 
 	

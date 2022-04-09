@@ -46,38 +46,35 @@ public class UserAdminController {
         //return view
         return mav;
     }
-	/* if(in.parse(request.getParameter("user_role.end_at")).after(date)){
-	out.print(true);
-} */
 
-//	@RequestMapping("/add-user")
-//    public ModelAndView add_user()
-//    {
-//		ModelAndView mav = new ModelAndView("admin-add-user");
-//
-//        //return view
-//        return mav;
-//    }
-//	
-//	@RequestMapping("/save-user")
-//    public String save_user(final ModelMap model,final HttpServletRequest request) {
-//
-//        //get data from view
-//        User saveUser = new User();
-//        saveUser.setUser_name((String)request.getParameter("val_name_user"));
-//        String[] value = request.getParameterValues("val_status_user");
-//        if(value != null) {
-//        	saveUser.setStatus(1);
-//        }else {
-//        	saveUser.setStatus(0);
-//        }
-//
-//        // insert data in to database
-//        userService.save(saveUser);
-//
-//        // return view
-//        return "redirect:/admin/user/";
-//	}
+	@RequestMapping("/add-user")
+    public ModelAndView add_user()
+    {
+		ModelAndView mav = new ModelAndView("admin-add-user");
+
+        //return view
+        return mav;
+    }
+	
+	@RequestMapping("/save-user")
+    public String save_user(final ModelMap model,final HttpServletRequest request) {
+
+        //get data from view
+        User saveUser = new User();
+        saveUser.setUser_name((String)request.getParameter("val_name_user"));
+        String[] value = request.getParameterValues("val_status_user");
+        if(value != null) {
+        	saveUser.setStatus(1);
+        }else {
+        	saveUser.setStatus(0);
+        }
+
+        // insert data in to database
+        userService.save(saveUser);
+
+        // return view
+        return "redirect:/admin/user/";
+	}
 
 	@RequestMapping(value = "/edit-user")
     public ModelAndView edit_user(final HttpServletRequest request, @RequestParam("id") int id)
