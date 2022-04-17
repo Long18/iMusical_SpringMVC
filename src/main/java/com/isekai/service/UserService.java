@@ -108,9 +108,7 @@ public class UserService {
                 hashtext = "0" + hashtext;
             }
             return hashtext;
-        } 
-  
-        // For specifying wrong message digest algorithms
+        }
         catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }

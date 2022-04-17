@@ -80,6 +80,7 @@ public class UserAdminController {
     public ModelAndView edit_user(final HttpServletRequest request, @RequestParam("id") int id)
     {
 		ModelAndView mav = new ModelAndView("admin-edit-user");
+		
 		User user = userService.get(id);
 		userService.getListUserRoleByUserId(user);
 		
@@ -132,7 +133,6 @@ public class UserAdminController {
     public String save_userRole(final ModelMap model,final HttpServletRequest request, @RequestParam("userId") int id) {
 
 		
-
         //get data from view
         UserRole saveUserRole = new UserRole();
         

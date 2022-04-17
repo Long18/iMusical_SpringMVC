@@ -23,15 +23,19 @@ public class Cart implements Serializable{
 
 	@Column(name = "value")
 	private Integer value;
+	
+	@Column(name = "isSelected")
+	private int isSelected;
 
 	public Cart() {
 		super();
 	}
 
-	public Cart(CartId cartId, Integer value) {
+	public Cart(CartId cartId, Integer value, int isSelected) {
 		super();
 		this.cartId = cartId;
 		this.value = value;
+		this.isSelected = isSelected;
 	}
 
 	public CartId getCartId() {
@@ -50,5 +54,15 @@ public class Cart implements Serializable{
 		this.value = value;
 	}
 
-	
+	public Boolean getIsSelected() {
+		return isSelected == 1?true:false;
+	}
+
+	public void setIsSelected(Boolean isSelected) {
+		this.isSelected = isSelected?1:0;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 }

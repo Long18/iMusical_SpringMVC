@@ -47,6 +47,7 @@ public class ProductService {
 	}
 
 	public List<ProductImage> getListImageByProductId(Product product) {
+		// check null, empty
 		if (product.getProductImages() instanceof PersistentBag || product.getProductImages() == null) {
 
 			List<ProductImage> listImage = entityManager
@@ -86,4 +87,13 @@ public class ProductService {
 		entityManager.close();
 		return listProducts;
 }
+	public List<Product> listProductWithBrand(int brandId) {
+
+
+			List<Product> listProductWithBrands = entityManager
+					.createQuery("FROM Product WHERE brand.id = :brand_id", Product.class)
+					.setParameter("brand_id", brandId).getResultList();
+			entityManager.close();
+			return listProductWithBrands;
+	}
 }

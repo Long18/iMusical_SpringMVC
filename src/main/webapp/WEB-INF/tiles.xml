@@ -5,7 +5,7 @@
 <tiles-definitions>
 	<!-- Base Define -->
 	<definition name="admin.definition"
-		template="/WEB-INF/views/adminClassic.jsp">
+		template="/WEB-INF/views/layout/adminClassic.jsp">
 		<put-attribute name="title" value="" />
 		<put-attribute name="header"
 			value="/WEB-INF/views/admin/base/_header.jsp" />
@@ -15,7 +15,7 @@
 	</definition>
 	
 	<definition name="admin-login"
-		template="/WEB-INF/views/adminLogin.jsp">
+		template="/WEB-INF/views/layout/adminLogin.jsp">
 	</definition>
 
 	<definition name="admin-dashboard" extends="admin.definition">
@@ -29,6 +29,8 @@
 		<put-attribute name="body"
 			value="/WEB-INF/views/admin/body/_add_brand.jsp" />
 	</definition>
+	
+	
 	<definition name="admin-add-order-detail"
 		extends="admin.definition">
 		<put-attribute name="body"
@@ -126,7 +128,7 @@
 	</definition>
 	
 	<definition name="client.definition"
-		template="/WEB-INF/views/clientClassic.jsp">
+		template="/WEB-INF/views/layout/clientClassic.jsp">
 		<put-attribute name="title" value="" />
 		<put-attribute name="header"
 			value="/WEB-INF/views/client/base/_header.jsp" />
@@ -135,9 +137,33 @@
 			value="/WEB-INF/views/client/base/_footer.jsp" />
 	</definition>
 	
-		<definition name="client-home" extends="client.definition">
+	<definition name="client-home" extends="client.definition">
 		<put-attribute name="body"
 			value="/WEB-INF/views/client/body/_home.jsp" />
+	</definition>
+	<definition name="client-product" extends="client.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/client/body/_product.jsp" />
+	</definition>
+	<definition name="client-product-detail" extends="client.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/client/body/_product_detail.jsp" />
+	</definition>
+	<definition name="client-login" extends="client.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/client/body/_login.jsp" />
+	</definition>
+	<definition name="client-sign-in" extends="client.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/client/body/_sign_up.jsp" />
+	</definition>
+		<definition name="client-cart" extends="client.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/client/body/_cart.jsp" />
+	</definition>
+		<definition name="client-order" extends="client.definition">
+		<put-attribute name="body"
+			value="/WEB-INF/views/client/body/_order.jsp" />
 	</definition>
 </tiles-definitions>
    

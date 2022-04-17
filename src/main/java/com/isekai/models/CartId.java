@@ -21,6 +21,10 @@ public class CartId implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "product_id")
 	private Product product;
+	
+	public CartId() {
+		
+	}
 
 	public CartId(User user, Product product) {
 		super();

@@ -49,7 +49,7 @@ public class Product {
 	private Date created_at;
 
 	@ManyToOne
-	@JoinColumn(name = "created_by", referencedColumnName = "user_id")
+	@JoinColumn(name = "created_by", referencedColumnName = "user_id")// join to product.created_by from user.user_id
 	private User created_by;
 
 	@ManyToOne

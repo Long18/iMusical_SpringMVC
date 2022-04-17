@@ -79,6 +79,7 @@
     <script src="<c:url value='/resources/template/FE/js/moralis.js'/>"></script>
     <script src="<c:url value='/resources/template/FE/js/nft.js'/>"></script>
     <script src="<c:url value='/resources/template/FE/js/sweetalert2.all.js'/>"></script>
+    <script src="<c:url value='/resources/template/FE/js/custom.js'/>"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0&appId=435206154792265&autoLogAppEvents=1"

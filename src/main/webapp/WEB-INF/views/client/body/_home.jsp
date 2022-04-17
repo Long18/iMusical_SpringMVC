@@ -3,7 +3,10 @@
 <%@page import="java.text.DecimalFormat"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!-- title page -->
+<input id="user_id" type="hidden" value="${sessionScope.UserLogin.id }"/>
+
 <section class="flat-title-page style2">
 	<img class="bgr-gradient gradient1"
 		src="<c:url value='/resources/template/FE/images/backgroup-secsion/bg-gradient1.png'/>"
@@ -134,7 +137,7 @@
 										<div class="sc-card-product">
 
 											<div class="card-media">
-												<a href="<c:url value='/item-detail/${product.id}'/>"><img
+												<a href="<c:url value='/product/product-detail?id=${product.id}'/>"><img
 													src="
 												<c:if test='${product.productImages.size() > 0}'>
 													<c:url value="${product.productImages.get(0).product_img_name }"/>
@@ -145,7 +148,6 @@
 													<%
 													Random rand = new Random();
 													int n = rand.nextInt(90000) + 10000;
-													out.println(n);
 													%>
 													<span class="number-like"> <%=n%></span>
 												</button>
@@ -155,7 +157,7 @@
 														data-labels=" :  ,  : , : , "></span>
 												</div>
 												<div class="button-place-bid">
-													<button href="#" data-id="${product.id }"
+													<button href="#" onclick="addCart(${ product.id })"
 														name="add-to-cart" type="button"
 														class="sc-button style-place-bid style bag fl-button pri-3 add-to-cart">
 														<span> Add to Cart </span>

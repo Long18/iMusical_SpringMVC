@@ -12,6 +12,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.isekai.models.User;
@@ -20,8 +21,7 @@ import com.isekai.service.UserService;
 
 @Controller
 @RequestMapping("/admin")
-
-public class AdminController {
+public class AdminController implements WebMvcConfigurer{
 
 	@Autowired
 	UserService userService;
@@ -44,7 +44,7 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/admin-dashboard", method = RequestMethod.POST)
-	public String dashboard(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response,
+	public String dashboard(final ModelMap model, final HttpServletRequest request,
 			HttpSession session, RedirectAttributes redirectAttributes) {
 
 		User user = null;
