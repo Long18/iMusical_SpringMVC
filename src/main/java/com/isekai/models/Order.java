@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -33,10 +34,6 @@ public class Order {
 	
 	@Column(name="order_total_sum")
 	private Integer total_sum;
-	
-//	@OneToOne(cascade = CascadeType.ALL)
-//	@JoinColumn(name="user_id")
-//	private User user;
 	
 	@Column(name="delivery_name")
 	private String delivery_name;
@@ -66,8 +63,8 @@ public class Order {
 	@Column(name="created_at")
 	private Date created_at;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="created_by")
+	@ManyToOne
+	@JoinColumn(name = "created_by", referencedColumnName = "user_id")
 	private User created_by;
 	
 	@Column(name="status")
@@ -135,13 +132,13 @@ public class Order {
 		this.total_sum = total_sum;
 	}
 
-//	public User getUser() {
-//		return user;
-//	}
-//
-//	public void setUser(User user) {
-//		this.user = user;
-//	}
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 
 	public String getDelivery_name() {
 		return delivery_name;
