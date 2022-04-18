@@ -34,9 +34,9 @@ public class Order {
 	@Column(name="order_total_sum")
 	private Integer total_sum;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="user_id")
-	private User user;
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name="user_id")
+//	private User user;
 	
 	@Column(name="delivery_name")
 	private String delivery_name;
@@ -89,7 +89,7 @@ public class Order {
 		this.code = code;
 		this.export_date = export_date;
 		this.total_sum = total_sum;
-		this.user = user;
+//		this.user = user;
 		this.delivery_name = delivery_name;
 		this.delivery_address = delivery_address;
 		this.delivery_phone = delivery_phone;
@@ -135,13 +135,13 @@ public class Order {
 		this.total_sum = total_sum;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+//	public User getUser() {
+//		return user;
+//	}
+//
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
 
 	public String getDelivery_name() {
 		return delivery_name;

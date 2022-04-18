@@ -49,6 +49,7 @@ public class ClientController implements WebMvcConfigurer{
 			session.setAttribute("UserLogin", user);
 		} else {
 //			redirectAttributes.addFlashAttribute("error", "Account Invalid!!");
+			return "redirect:/login";
 		}
 		
 		return "redirect:/";

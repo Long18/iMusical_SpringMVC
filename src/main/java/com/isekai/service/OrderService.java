@@ -21,7 +21,8 @@ public class OrderService {
 	@Autowired
 	OrderRepository repo;
 	
-
+	@PersistenceContext
+	EntityManager entityManager;
 	
 	public List<Order> listAll(){
 		return (List<Order>) repo.findAll();
@@ -39,8 +40,13 @@ public class OrderService {
 		repo.deleteById(id);
 	}
 	
-	@PersistenceContext
-	EntityManager entityManager;
+	@Transactional
+	public Order saveAndFlush(Order order) {
+		entityManager.persist(order);
+		return order;
+	}
+	
+
 	
 	public List<OrderDetail> getListOrderDetailByOrderId(Order order) {
 		if (order.getOrderDetails() instanceof PersistentBag || order.getOrderDetails() == null) {

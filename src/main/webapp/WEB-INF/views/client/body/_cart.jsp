@@ -82,7 +82,7 @@
 																value="${cart.cartId.product.price*cart.value }" />
 															VND
 														</del>
-														-${Math.round((cart.cartId.product.price/cart.cartId.product.priceSale - 1)*100)}
+														${Math.round(((cart.cartId.product.priceSale/cart.cartId.product.price) - 1)*100)}
 														%</span>
 													<span id="sale-${cart.cartId.product.id }"> <fmt:formatNumber
 															type="number" maxFractionDigits="0"
@@ -164,7 +164,7 @@
 							</ul>
 						</div>
 						<div class="col-md-12 wrap-inner load-more text-center mg-t16">
-							<a class="sc-button fl-button pri-3"><span>Create
+							<a href="<c:url value='/order-cart' />" class="sc-button fl-button pri-3"><span>Create
 									Order</span></a>
 						</div>
 					</div>
